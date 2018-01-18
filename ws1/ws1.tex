@@ -1,0 +1,42 @@
+\def\ceil#1{\lceil{#1}\rceil}
+{\noindent Steve Hsu\hfill workshop 1}
+
+\item{a.} false
+
+Let $A_n = (0, {1\over n})$.
+We can show that $\bigcap_{n=1}^n A_n = \emptyset$;
+Let $x$ be a positive real number.
+We want to show that $x$ is not in the intersection.
+Since $1 / \ceil{1\over x} \le x$,
+$A_{\ceil{1\over x}}$ does not contain $x$,
+so $x$ cannot be in the intersection.
+There are no nonpositive numbers in any $A_n$,
+so they cannot be in the intersection, either.
+
+\item{b.} true
+
+Lemma. There is a natural number $k$ such that
+$A_n = A_k$ for all $n$ such that $n \ge k$.
+
+Proof. Since $A_1$ is finite,
+there are finitely many natural numbers between $|A_1|$ and $0$.
+Since $A_n \subseteq A_{n-1}$ for each natural number $n \ge 2$,
+$|A_n| \le |A_{n-1}|$.
+Therefore, there are finitely many natural numbers $n$ such that
+$|A_n| < |A_{n-1}|$.
+Let $k$ be the largest such $n$.
+We can now conclude that for each $n$ such that $n \ge k$,
+$|A_n| = |A_k|$, and since $A_n \subseteq A_k$,
+we have $A_n = A_k$, as desired.
+
+The intersection is therefore equal to
+$\bigcap_{n=1}^k A_n = A_k$,
+which is finite and nonempty, as desired.
+
+\item{c.} false
+
+Let $A = B = \{1\}$ and $C = \{2\}$.
+Then $A \cap (B \cup C) = \{1\}$,
+which is not equal to
+$(A \cap B) \cup C = \{1,2\}$.
+\bye
