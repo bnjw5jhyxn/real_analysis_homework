@@ -1,0 +1,190 @@
+\def\real{{\bf R}}
+\def\rational{{\bf Q}}
+\def\natural{{\bf N}}
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill homework 1}
+\bigskip
+\item{1.2.6.} a.
+
+If $a$ and $b$ are both nonnegative,
+then the inequality simplifies to $a + b \le a + b$, which is clearly true.
+
+If they are both negative, then it simplifies to $-(a + b) \le -a - b$,
+which is also clearly true.
+\medskip
+\item{} b.
+
+Lemma 1. $x \le \abs x$ for any real number $x$.
+
+Proof. We have two cases: first, $x$ is nonnegative;
+and second, $x$ is negative.
+
+In the first case, the inequality simplifies to $x \le x$,
+which is clearly true.
+
+In the second case, it simplifies to $x \le -x$.
+Since $x$ is negative and $-x$ is positive,
+this inequality is also true.
+\medskip
+Lemma 2. $\abs a \abs b = \abs{ab}$ for any real numbers $a$ and $b$.
+
+Proof. We have two cases: first, $a$ and $b$ have the same sign;
+and second, $a$ and $b$ have different signs.
+
+In the first case, the equation simplifies to $ab = ab$,
+which is clearly true.
+
+In the second case, it simplifies to $-ab = -ab$, which is also clearly true.
+\medskip
+Lemma 3. If $a^2 \le b^2$,
+then $\abs a \le \abs b$ for any real numbers $a$ and $b$.
+
+Proof by contraposition. If $\abs a > \abs b$,
+then $a^2 > b^2$ for any real numbers $a$ and $b$.
+
+Assume that $\abs a > \abs b$.
+We want to show that $a^2 > b^2$.
+
+Multiplying both sides by $\abs a$ gives $a^2 > \abs{ab}$,
+while multiplying by $\abs b$ gives $\abs{ab} > b^2$,
+so $a^2 > b^2$, as desired.
+\medskip
+We want to show that $\abs{a + b} \le \abs a + \abs b$
+for any real numbers $a$ and $b$.
+By lemma 1, $2ab \le \abs{2ab}$.
+Adding $a^2 + b^2$ to both sides,
+$a^2 + 2ab + b^2 \le a^2 + \abs{2ab} + b^2$.
+Since $x^2 = \abs x^2$ for any real number $x$ by lemma 2,
+the right hand side is equal to ${\abs a}^2 + 2\abs a\abs b + \abs b^2$.
+Factoring both sides, $(a + b)^2 \le (\abs a + \abs b)^2$.
+By lemma 3, we can simplify the inequality to
+$\abs{a + b} \le \abs{\abs a + \abs b}$.
+Since $\abs a + \abs b$ is nonnegative,
+the right hand side simplifies to $\abs a + \abs b$.
+We now have $\abs{a + b} \le \abs a + \abs b$, as desired.
+\medskip
+\item{} c.
+
+By the triangle inequality,
+$\abs{a - c} + \abs{c - d} \ge \abs{a - c + c - d} = \abs{a - d}$.
+Adding $\abs{d - b}$ to both sides,
+$\abs{a - c} + \abs{c - d} + \abs{d - b} \ge \abs{a - d} + \abs{d - b}$.
+Applying the triangle inequality to the right hand side,
+$\abs{a - d} + \abs{d - b} \ge \abs{a - b}$, as desired.
+\medskip
+\item{} d.
+
+We have two cases: first, $\abs a \ge \abs b$; and second, $\abs b > \abs a$.
+
+In the first case, by the triangle inequality,
+$\abs a = \abs{a - b + b} \le \abs{a - b} + \abs{b}$.
+Subtracting $\abs b$ from both sides,
+$\abs a - \abs b \le \abs{a - b}$.
+Since $\abs a \ge \abs b$,
+then $\abs{\abs a - \abs b} = \abs a - \abs b \le \abs{a - b}$, as desired.
+
+In the second case, observe that
+$\abs{\abs a - \abs b} = \abs{\abs b - \abs a}$.
+By a similar argument,
+$\abs{\abs b - \abs a} = \abs b - \abs a \le \abs{b - a} = \abs{a - b}$,
+as desired.
+\bigskip
+\item{1.2.11.} a.
+
+There are real numbers satisfying $a < b$ such that
+for all natural numbers $n$, $a + 1/n \ge b$.
+
+The claim is true.
+\medskip
+\item{} b.
+
+For all positive real numbers $x$, $x \ge 1/n$ for some natural number $n$.
+
+The negation is true.
+\medskip
+\item{} c.
+
+There are two distinct real numbers such that
+all numbers between them are irrational.
+
+The claim is true.
+\bigskip
+\item{1.3.10.} a.
+
+Notice that all elements of $B$ are upper bounds for $A$.
+Since $B$ is nonempty, $A$ has an upper bound and $\sup A$ exists.
+By definition, $\sup A \le b$ for any $b$ in $B$
+and $\sup A \ge a$ for any $a$ in $A$.
+\medskip
+\item{} b.
+
+Lemma. For real numbers $a$ and $b$,
+if $a + \epsilon \ge b$ for any positive real number $\epsilon$,
+then $a \ge b$.
+
+Proof by contraposition.
+Let $a$ and $b$ be real numbers.
+If $a < b$, then there is a positive real number $\epsilon$
+such that $a + \epsilon < b$.
+
+Assume that $a < b$.
+We want to show that there is a positive real number $\epsilon$
+such that $a + \epsilon < b$.
+
+Since $b > a$, $(b - a) / 2$ is a positive real number.
+Setting $\epsilon = (b - a) / 2$,
+$a + \epsilon = a + b/2 - a/2 = a/2 + b/2 = b - (b - a)/2$,
+which is clearly less than b, as desired.
+\medskip
+Let $B$ be the set of upper bounds for $E$.
+Let $A$ be the complement of $B$ in $\real$.
+$A$ and $B$ are disjoint and have union $\real$
+by the definition of complement.
+$B$ is nonempty since $E$ is bounded above.
+Since $E$ is nonempty, there is a real number $e$ in $E$.
+$e - 1$ is clearly not an upper bound for $E$, so $A$ is nonempty.
+By the definition of upper bound,
+all elements of $A$ are smaller than all elements of $B$.
+By the cut property, there is some real number $c$ such that
+$a \le c$ for all $a \in A$ and $c \le b$ for all $b \in B$.
+We claim that $c = \sup E$.
+We must first show that $c$ is an upper bound for $E$.
+In other words, $c \ge e$ for any $e \in E$.
+Let $e$ be an arbitrary element of $E$.
+For any positive real number $\epsilon$,
+$e - \epsilon$ is not an upper bound for $E$,
+so $e - \epsilon \in A$ and $c \ge e - \epsilon$.
+In other words, $c + \epsilon \ge e$.
+By the lemma, this implies that $c \ge e$,
+so $c$ is an upper bound for $E$.
+By the definition of the cut property,
+$c$ is the least upper bound for $E$, as desired.
+\medskip
+\item{} c.
+
+Let $B = \{x \in \rational : x > 0, x^2 > 2\}$
+be the set of positive rational numbers whose squares are greater than $2$.
+Let $A$ be the complement of $B$ in $\rational$.
+$A$ and $B$ are disjoint, nonempty sets whose union is $\rational$
+satisfying $a < b$ for all $a \in A$ and $b \in B$,
+but there is no rational number satisfying the cut property.
+\bigskip
+\item{1.4.8.} a.
+$A = \{1 - ({1 \over 2})^n : n \in \natural\},
+B = \{1 - ({1 \over 3})^n : n \in \natural\}$
+\medskip
+\item{} b.
+$J_k = (-{1 \over n}, {1 \over n})$
+is the open interval from $-{1 \over n}$ to $1 \over n$
+\medskip
+\item{} c.
+$L_k = [k, \infty)$
+\medskip
+\item{} d.
+impossible
+
+Let $M_k = \bigcap_{n=1}^k I_n$.
+$M_1, M_2, M_3, \ldots$ is a sequence of nested intervals.
+Clearly, $\bigcap_{n=1}^\infty M_n = \bigcap_{n=1}^\infty I_n$.
+By the nested interval property, this intersection is nonempty.
+\bye
