@@ -1,0 +1,135 @@
+\def\real{{\bf R}}
+\def\natural{{\bf N}}
+\centerline{Steve Hsu\hfill homework 2}
+\item{1.5.4.} a.
+
+The function $f(x) = 2{x - a \over b - a} - 1$ maps $(a,b)$ to $(-1,1)$,
+which we know has the same cardinality as $\real$.
+
+\item{} b.
+
+The function $f(x) = 1 / (x + 1 - a)$ maps $(a,\infty)$ to $(0,1)$,
+which by part a has the same cardinality as $\real$.
+
+\item{} c.
+
+The function
+$$f(x) = \cases{
+1/2,&if $x = 0$\cr
+x/2,&if $x = 2^{-n}$ for some $n \in \natural$\cr
+x,&otherwise\cr
+}$$
+is a bijection between $[0,1)$ and $(0,1)$.
+
+\item{1.5.7.} a.
+
+$f(x) = (x,1/2)$
+
+\item{} b.
+
+Suppose that $a = 0.a_1 a_2 a_3 \cdots$ is a nonterminating decimal expansion
+of $a$ and $b = 0.b_1 b_2 b_3 \cdots$ and is a nonterminating decimal
+expansion of $b$.
+Then $f(a,b) = 0.a_1 b_1 a_2 b_2 \cdots$.
+
+This function is not onto.
+For example, no pair $(a,b)$ maps to $599/4950 = 0.121010101010 \cdots$.
+If there were such a pair, it would be $a = 1/9 = 0.111 \cdots$ and
+$b = 1/5 = 0.2000 \cdots$, but since we take nonterminating decimal
+expansions, $f(a,b) = 0.11191919191919 = 277 / 2475$.
+
+\item{1.5.8.}
+
+Observe that $2$ is an upper bound for $B$
+since any number $x$ in $B$ greater than $2$
+would give the set $\{x\}$, which would have a sum greater than $2$.
+
+Let $B_n = \{x \in B : 2^{1 - n} < x \le 2^{2 - n}\}$
+for each natural number $n$.
+
+Notice that each $B_n$ must have at most $2^n$ elements
+since otherwise, we would have
+$\sum _{x \in B_n} x > 2^n 2^{1 - n} = 2$,
+which violates the definition of $B$.
+
+Since each $B_n$ is finite, we can list all elements of $B$ by first listing
+elements of $B_1$, then elements of $B_2$, and so on.
+$B$ is therefore countable or finite.
+
+\item{1.5.9.} a.
+
+$\sqrt 2$ is a root of $x^2 - 2$
+
+$\root 3 \of 2$ is a root of $x^3 - 2$
+
+$\sqrt 2 + \sqrt 3$ is a root of $x^4 - 10x^2 + 1$
+
+\item{} b.
+
+Since a polynomial of degree $n$ has at most $n + 1$ terms,
+its coefficients can be written as an $(n + 1)$-tuple
+$(a_n, a_{n - 1}, a_{n - 2}, \cdots, a_2, a_1, a_0)$,
+where $a_n$ is a nonzero integer and the other components are integers.
+Since the set of possible values of $a_n$ is countable
+and the set of possible values of $a_{n - 1}$ is countable,
+the set of possible pairs $(a_n, a_{n - 1})$ is also countable
+by rearrangement of $\natural$ into an infinite matrix
+as shown in exercise 1.5.3.
+
+Inductively, since the set of $(k + 1)$-tuples
+$(a_n, a_{n - 1}, \cdots, a_{n - k})$ is countable
+and the set of possible values of $a_{n - k - 1}$ is countable,
+the set of $(k + 2)$-tuples is also countable.
+
+Finally, the set of $(n + 1)$ tuples of integers is countable,
+so the set of polynomials of degree $n$ is also countable.
+Since each polynomial has a finite number of roots,
+the set $A_n$ of roots of these polynomials is countable as well.
+
+\item{} c.
+
+By Theorem 1.5.8, the union of a sequence of countable sets is countable,
+so $\bigcup _{n \in \natural} A_n$, which is the set of algebraic numbers,
+is countable.
+
+If the set of transcendental numbers were countable,
+its union with the set of algebraic numbers would also be countable,
+but we know that the set of real numbers is uncountable.
+The set of transcendental numbers is therefore uncountable.
+
+\item{1.6.4.}
+
+Suppose for contradiction that $S$ is countable.
+In other words, $S$ can be written as $\{s_1, s_2, s_3, \cdots\}$.
+Write $s_n$ as $(s_{n1}, s_{n2}, s_{n3}, \cdots)$ for each natural number
+$n$.
+We define a sequence $a = (a_1, a_2, a_3, \cdots)$, where $a_n = 1$
+if $s_{nn} = 0$ and $a_n = 0$ if $s_{nn} = 1$ for each natural number $n$.
+Since $a$ differs from each $s_n$ at the $n$th entry,
+$a$ is a sequence of $0$'s and $1$'s that is not in the sequence.
+The sequence therefore does not include all members of $S$,
+contradicting our assumption that $S$ is countable.
+
+\item{1.6.9.}
+
+We will define an injective function from $P(\natural)$ to $(0,1)$
+and another injective function from $(0,1)$ to $P(\natural)$.
+By the Schr\"oder-Bernstein Theorem, there will be a bijection
+between the two sets.
+
+Let $A$ be a set of natural numbers.
+We define
+$$f(A) = \cases{
+{1 \over 2} \sum _{x \in A} 2^{-x},&if A is infinite\cr
+\noalign{\vskip2pt}
+{1 \over 2} (1 + \sum _{x \in A} 2^{-x}),&if A is finite\cr
+}$$.
+
+Let $a$ be a real number in the interval $(0,1)$ with nonterminating
+binary expansion $0.a_1 a_2 a_3 \cdots$.
+We define $g(a) = \{x \in \natural : a_x = 1\}$.
+
+Since we have injective functions in both directions,
+by the Schr\"oder-Bernstein Theorem, $P(\natural) \sim (0,1)$.
+We know that $(0,1) \sim \real$, so $P(\natural) \sim \real$.
+\bye
