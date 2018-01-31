@@ -1,0 +1,78 @@
+\centerline{Steve Hsu\hfill workshop 2}
+\item{a.} i. true
+
+By the definition of $f^{-1}$,
+$f^{-1}(A \cup B) = \{x \in X : f(x) \in A \cup B\}$.
+By the definition of set union, this set is equal to
+$\{x \in X : f(x) \in A \lor f(x) \in B\}$.
+Clearly, this set is
+$\{x \in X : f(x) \in A\} \cup \{x \in X : f(x) \in B\}$,
+which by definition of $f^{-1}$ is $f^{-1}(A) \cup f^{-1}(B)$.
+\bigskip
+\item{} ii. true
+
+By the definition of $f^{-1}$,
+$f^{-1}(A \cap B) = \{x \in X : f(x) \in A \cap B\}$.
+By the definition of set intersection, this set is equal to
+$\{x \in X : f(x) \in A \land f(x) \in B\}$.
+Clearly, this set is
+$\{x \in X : f(x) \in A\} \cap \{x \in X : f(x) \in B\}$,
+which by definition of $f^{-1}$ is $f^{-1}(A) \cap f^{-1}(B)$.
+\bigskip
+\item{b.} i. true
+
+First we will show that $f(A \cup B) \subset f(A) \cup f(B)$.
+In other words, we want to show that
+if $y \in f(A \cup B)$, then $y \in f(A) \cup f(B)$.
+
+Assume that $y \in f(A \cup B)$.
+We want to show that $y \in f(A) \cup f(B)$.
+Since $y \in f(A \cup B)$, $y = f(x)$ for some $x \in A \cup B$.
+By the definition of set union, we have two cases:
+first, $x \in A$; and second, $x \in B$.
+In the first case, since $x \in A$, $y \in f(A)$,
+so $y \in f(A) \cup f(B)$.
+In the second case, since $x \in B$, $y \in f(B)$,
+so $y \in f(A) \cup f(B)$.
+
+Since $y \in f(A \cup B)$ implies that $y \in f(A) \cup f(B)$,
+we have $f(A \cup B) \subset f(A) \cup f(B)$.
+\medskip
+Next, we will show that $f(A) \cup f(B) \subset f(A \cup B)$.
+In other words, we want to show that
+if $y \in f(A) \cup f(B)$, then $y \in f(A \cup B)$.
+
+Assume that $y \in f(A) \cup f(B)$.
+By the definition of set union, we have two cases:
+first, $y \in f(A)$; and second, $y \in f(B)$.
+In the first case, $y = f(x)$ for some $x \in A$.
+In the second case, $y = f(x)$ for some $x \in B$.
+In either case, $x \in A \cup B$, so $y \in f(A \cup B)$.
+
+Since $y \in f(A) \cup f(B)$ implies that $y \in f(A \cup B)$,
+we have $f(A) \cup f(B) \subset f(A \cup B)$.
+In conjunction with the previous part, we have
+$f(A \cup B) = f(A) \cup f(B)$, as desired.
+\bigskip
+\item{} ii. false
+
+Let $X = \{0,1\}$, $Y = \{0\}$, $A = \{0\} \subset X$, and
+$B = \{1\} \subset X$.
+Define $f(x) = 0$ for any $x \in X$.
+Notice that $f(A \cap B) = f(\emptyset) = \emptyset$,
+while $f(A) = f(B) = \{0\}$, so $f(A) \cap f(B) = \{0\}$,
+which is nonempty.
+\medskip
+It is true that $f(A \cap B) \subset f(A) \cap f(B)$.
+In other words, we can show that
+if $y \in f(A \cap B)$, then $y \in f(A) \cap f(B)$.
+
+Assume that $y \in f(A \cap B)$.
+We want to show that $y \in f(A) \cap f(B)$.
+Since $y \in f(A \cap B)$, $y = f(x)$ for some $x \in A \cap B$.
+By the definition of set intersection, $x \in A$ and $x \in B$.
+Since $x \in A$, $y \in f(A)$.
+Since $x \in B$, $y \in f(B)$.
+By the definition of set intersection, $y \in f(A) \cap f(B)$.
+Therefore, $f(A \cap B) \subset f(A) \cap f(B)$, as desired.
+\bye
