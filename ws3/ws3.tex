@@ -1,0 +1,13 @@
+\centerline{Steve Hsu\hfill workshop 3}
+Let $a_n = \root n \of n - 1$.
+We will first show that $(a_n) \to 0$.
+We have $n = (1 + a_n)^n = \sum _{k = 0} ^n {n \choose k} a_n^k \ge
+{n \choose 2} a_n^2$.
+Simplifying the inequality, $a_n \le \sqrt {2 \over n - 1}$.
+Since $\root n \of n \ge 1$ for all natural numbers $n$,
+we have $0 \le a_n \le \sqrt {2 \over n - 1}$.
+Since $(\sqrt {2 \over n - 1}) \to 0$, by the squeeze theorem,
+$(a_n) \to 0$.
+Since $(1) \to 1$, by the algebraic limit theorem,
+$(\root n \of n) \to 1$.
+\bye

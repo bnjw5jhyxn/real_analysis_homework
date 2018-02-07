@@ -1,0 +1,147 @@
+\def\abs#1{\vert{#1}\vert}
+\centerline{Steve Hsu\hfill homework 3}
+\item{2.2.2.} c.
+
+Given $\epsilon > 0$, by the Archimedean Property,
+there is a natural number $N$ such that $N > {1 \over \epsilon^3}$.
+Assume that $n$ is a natural number greater than or equal to $N$.
+We want to show that $\abs{\sin n^2 \over \root 3 \of n} < \epsilon$.
+Since $n \ge N > {1 \over \epsilon^3}$, we have ${1 \over \root 3 \of n} < \epsilon$.
+Since $\abs{\sin x} \le 1$, $\abs{\sin n^2} \le 1$ as well.
+Therefore, ${\abs{\sin n^2} \over \root 3 \of n} \le {1 \over \root 3 \of n} < \epsilon$,
+as desired.
+\bigskip
+\item{2.2.7.} a.
+
+The sequence $(-1)^n$ is frequently in the set $\{1\}$
+since for any $N$, $(-1)^N = 1$ if $N$ is even
+and $(-1)^{N+1} = 1$ if $N$ is odd.
+
+It is not eventually in $\{1\}$
+since for any $N$, $(-1)^N \ne 1$ if N is odd
+and $(-1)^{N+1} \ne 1$ if $N$ is even.
+\medskip
+\item{} b.
+
+Eventually is stronger.
+We can show that if a sequence $(a_n)$ is eventually in a set $A$,
+then it is frequently in $A$.
+
+Assume that $(a_n)$ is eventually in $A$.
+Then there is a natural number $N$ such that $a_n \in A$
+for all natural numbers $n \ge N$.
+We want to show that for any natural number $N'$,
+there is a natural number $n \ge N'$ such that $a_n \in A$.
+We can take $n = \max \{N,N'\}$, which is at least $N$,
+so $a_n \in A$, as desired.
+\medskip
+\item{} c.
+
+A sequence $(a_n)$ converges to $a$ if,
+given any $\epsilon$-neighborhood $V_\epsilon(a)$ of $a$,
+$(a_n)$ is eventually in $V_\epsilon(a)$.
+\medskip
+\item{} d.
+
+The sequence is not necessarily eventually in $(1.9, 2.1)$.
+For example, the sequence $(1,2,1,2,\cdots)$
+has infinitely many $2$'s but is not eventually in $(1.9, 2.1)$.
+
+It is frequently in $(1.9, 2.1)$.
+We want to show that for any natural number $N$,
+there is a natural number $n \ge N$ such that $x_n = 2 \in (1.9, 2.1)$.
+Since $(x_n)$ has infinitely many $2$'s,
+and there are finitely many natural numbers less than $N$,
+there must be such an $n$.
+Therefore, $(x_n)$ is frequently in the interval $(1.9, 2.1)$.
+\bigskip
+\item{2.2.8.} a.
+
+The sequence $a_n = (0,1,0,1,\cdots)$ is zero-heavy.
+Take $M = 1$.
+Let $N$ be an arbitrary natural number.
+If $N$ is odd, then $a_N = 0$.
+If $N$ is even, then $a_{N+1} = 0$.
+\medskip
+\item{} b.
+
+We want to show that if a sequence is zero-heavy,
+then it contains infinitely many zeros.
+Assume that a sequence $(a_n)$ is zero-heavy.
+Then there is some natural number $M$ such that for any natural number $N$,
+there is a natural number $n$ satisfying $N \le n \le N + M$ where $a_n = 0$.
+In particular it is true for $N = x(M + 1)$ for each natural number $x$.
+Since each range $x(M + 1) \le n \le x(M + 1) + M = (x + 1)(M + 1) - 1$
+is disjoint, the value of $n$ in each range satisfying $a_n = 0$ is distinct.
+Therefore, since there are infinitely many such ranges,
+there are infinitely many values of $n$ such that $a_n = 0$, as desired.
+\medskip
+\item{} c.
+
+Not all sequences with infinitely many zeros are zero-heavy.
+For example, the sequence
+$$a_n = \cases{
+0,&if $n$ is a perfect square\cr
+1,&otherwise\cr
+}$$
+has infinitely many zeros, but for any choice of $M$,
+there are $2M$ consecutive $1$'s between $a_{M^2}$ and $a_{(M+1)^2}$.
+\medskip
+\item{} d.
+
+A sequence $(x_n)$ is not zero-heavy if for every natural number $M$,
+there is a natural number $N$ such that
+$a_n \ne 0$ for any natural number $n$ satisfying $N \le n \le N + M$.
+\bigskip
+\item{2.3.3.}
+
+By the order limit theorem,
+since $x_n \le y_n$ for all natural numbers $n$, $\lim x_n \le \lim y_n$ and
+since $y_n \le z_n$ for all natural numbers $n$, $\lim y_n \le \lim z_n$.
+Then $l \le \lim y_n \le l$, so $\lim y_n = l$.
+\bigskip
+\item{2.3.5.}
+
+For the forward direction, assume that $(z_n) \to z$.
+We want to show that $(x_n) \to z$ and $(y_n) \to z$.
+Given $\epsilon > 0$, there is a natural number $N_0$
+such that $\abs {z_n - z} < \epsilon$ for all $n \ge N_0$.
+Take $N$ such that $2N > N_0$.
+Then for any $n > N$, we have $x_n = z_{2n - 1}$,
+so $\abs {x_n - z} < \epsilon$.
+Similarly, $y_n = z_{2n}$, so $\abs {y_n - z} < \epsilon$.
+
+For the backward direction, assume that $(x_n) \to z$ and $(y_n) \to z$.
+We want to show that $(z_n) \to z$.
+Given $\epsilon > 0$, there is a natural number $N_1$
+such that $\abs {x_n - z} < \epsilon$ for any $n \ge N_1$
+and there is a natural number $N_2$
+such that $\abs {y_n - z} < \epsilon$ for any $n \ge N_2$.
+Take $N = 2(\max \{N_1,N_2\})$.
+Then for any $n \ge N$, if $n$ is odd, we have $z_n = x_{(n + 1) / 2}$,
+so $\abs {z_n - z} < \epsilon$.
+Similarly, if $n$ is even, we have $z_n = y_{n / 2}$,
+so $\abs {z_n - z} < \epsilon$.
+\bigskip
+\item{2.3.6.}
+
+\proclaim Lemma. If $x > 1$, then $0 < x - \sqrt {x^2 - 1} < {1 \over x}$.
+
+Since $x^2 > x^2 - 1$, taking the square root of both sides,
+we have $x > \sqrt {x^2 - 1}$.
+Therefore, $0 < x - \sqrt {x^2 - 1}$.
+
+Since $x > 1$, we have ${1 \over x^2} < 1$.
+Adding $x^2 - 2$ to both sides, we have $x^2 - 2 + {1 \over x^2} < x^2 - 1$.
+Since $x^2 - 2 + {1 \over x^2} = (x - {1 \over x})^2$,
+both sides of the inequality are nonnegative.
+Taking the square root of both sides, $x - {1 \over x} < \sqrt {x^2 - 1}$.
+Consequently, we have $x - \sqrt {x^2 - 1} < {1 \over x}$, as desired.
+\medskip
+Notice that $n^2 + 2n = (n + 1)^2 - 1$.
+Since $0 < n + 1 - \sqrt {(n + 1)^2 - 1} < {1 \over n + 1}$
+for all natural numbers $n$,
+by the squeeze theorem, $(n + 1 - \sqrt {n^2 + 2n}) \to 0$.
+Since $(-1) \to -1$, by the algebraic limit theorem,
+$(n - \sqrt {n^2 + 2n}) \to -1$.
+\bye
