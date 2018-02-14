@@ -1,0 +1,25 @@
+\centerline{Steve Hsu\hfill workshop 4}
+\item{a.}
+
+Given a real number $M$, take $N$ such that
+for every $n \ge N$, $b_n > M - a + 1$ and $a_n > a - 1$.
+Then for $n \ge N$, $a_n + b_n > M - a + 1 + a - 1 = M$, as desired.
+\bigskip
+\item{b.}
+
+Let $a_n = c - n$ and $b_n = n$ for every natural number $n$.
+Given a real number $M$, take $N > c - M$.
+Then for $n \ge N$, $a_n = c - n \le c - N < M$, so $(a_n) \to -\infty$.
+Given a real number $M$, take $N > M$.
+Then for $n \ge N$, $b_n = n \ge N > M$, so $(b_n) \to +\infty$.
+Notice that $a_n + b_n = c$ for every natural number $n$,
+so $(a_n + b_n) \to c$.
+
+Let $a_n = -n$ and $b_n = 2n$ for every natural number $n$.
+Clearly, $(a_n) \to -\infty$ and $(b_n) \to +\infty$.
+Since $a_n + b_n = n$ for each natural number $n$,
+$(a_n + b_n) \to +\infty$.
+
+Similarly, let $a_n = -2n$ and $b_n = n$ for every natural number $n$.
+Then $(a_n) \to -\infty$, $(b_n) \to +\infty$, and $(a_n + b_n) \to -\infty$.
+\bye

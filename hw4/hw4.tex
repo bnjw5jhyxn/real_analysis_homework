@@ -1,0 +1,257 @@
+\def\abs#1{\vert{#1}\vert}
+\overfullrule=0pt
+\centerline{Steve Hsu\hfill homework 4}
+\item{2.3.13.} a.
+
+We will show that for fixed $n$, $\lim _{m \to \infty} a_{mn} = 1$.
+Given $\epsilon > 0$, take $M > n(1/\epsilon - 1)$.
+Note that we can manipulate this inequality to get $n/(M + n) < \epsilon$.
+Then for $m \ge M$, we have $\abs{1 - m/(m + n)} =
+1 - m/(m + n) = n/(m + n) \le n/(M + n) < \epsilon$, as desired.
+Then $\lim _{n \to \infty} (\lim _{m \to \infty} a_{mn}) = \lim _{n \to \infty} (1) = 1$.
+
+For fixed $m$, $\lim _{n \to \infty} a_{mn} = 0$.
+Given $\epsilon > 0$, take $N > m(1/\epsilon - 1)$.
+Note that we can manipulate this inequality to get $m/(m + N) < \epsilon$.
+Then for $n \ge N$, we have $\abs{m/(m + n) - 0} = m/(m + n) \le
+m/(m + N) < \epsilon$, as desired.
+Then $\lim _{m \to \infty} (\lim _{n \to \infty} a_{mn}) = \lim _{m \to \infty} (0) = 0$.
+\medskip
+\item{} b.
+
+For $a_{mn} = 1/(m + n)$, $\lim _{m,n \to \infty} a_{mn} = 0$.
+Given $\epsilon > 0$, take $N > 1/(2\epsilon)$.
+Then for any $m,n \ge N$, $m + n > 1/\epsilon$ and
+$\abs{1/(m + n) - 0} = 1/(m + n) < \epsilon$, as desired.
+
+For fixed $n$, $\lim _{m \to \infty} a_{mn} = 0$.
+Given $\epsilon > 0$, take $M > 1/\epsilon - n$.
+Then for any $m \ge M$, we have $m + n \ge M + n > 1/\epsilon$,
+so $\abs{1/(m + n) - 0} = 1/(m + n) < \epsilon$, as desired.
+Therefore, $\lim _{n \to \infty} (\lim _{m \to \infty} a_{mn}) = 0$.
+By the same argument, $\lim _{m \to \infty} (\lim _{n \to \infty} a_{mn}) = 0$.
+\smallskip
+For $a_{mn} = mn/(m^2 + n^2)$, $\lim _{m,n \to \infty}$ does not exist.
+Take $\epsilon = 1/20$.
+For any natural number $N$, $a_{NN} = N^2 / (N^2 + N^2) = 1/2$,
+while $a_{N3N} = 3N^2 / (N^2 + 9N^2) = 3/10$.
+Consequently, $a_{mn}$ is not Cauchy and does not converge.
+
+For fixed $m$, $\lim _{n \to \infty} a_{mn} = 0$.
+Given $\epsilon > 0$, take $N > m/\epsilon$.
+For any $n \ge N$, $n^2 > mn/\epsilon$, so $n^2 + m^2 > mn/\epsilon$,
+and $\abs{mn/(m^2 + n^2) - 0} = mn/(m^2 + n^2) < \epsilon$, as desired.
+Therefore, $\lim _{m \to \infty} (\lim _{n \to \infty} a_{mn}) = 0$.
+By the same argument, $\lim _{m \to \infty} (\lim _{n \to \infty} a_{mn}) = 0$.
+\medskip
+\item{} c.
+
+Let $a_{mn} = {\sin m \over n} + {\sin n \over m}$.
+
+$\lim _{m,n \to \infty} a_{mn} = 0$.
+Given $\epsilon > 0$, take $N > 2/\epsilon$.
+For any $m,n \ge N$, note that $\abs {\sin m} \le 1$ and $\abs {\sin n} \le 1$.
+Therefore, $\abs{{\sin m \over n} + {\sin n \over m}} \le
+\abs{\sin m \over n} + \abs{\sin n \over m} \le 1/m + 1/n <
+\epsilon/2 + \epsilon/2 = \epsilon$.
+
+For fixed $n$, $\lim _{m \to \infty} a_{mn}$ does not exist.
+Take $\epsilon = 1 / (2n)$.
+For any natural number $M$,
+there are values of $m \ge M$ such that $\sin m > 2/3$ and
+values of $m \ge M$ such that $\sin m < -2/3$.
+Since $({\sin m \over n}) \to 0$,
+$a_{mn} < -1 / (2n)$ for some $m \ge M$ and
+$a_{mn} > 1 / (2n)$ for some $m \ge M$.
+Hence, $a_{mn}$ is not Cauchy and therefore diverges.
+\medskip
+\item{} d.
+
+We want to show that $(b_m) \to a$.
+Given $\epsilon > 0$, take $N$ such that
+for $m,n \ge N$, $\abs{a_{mn} - a} < \epsilon / 2$.
+For $m \ge N$, since $a_{mn}$ is eventually
+in the interval $(a - \epsilon / 2, a + \epsilon / 2)$,
+and $b_m = \lim _{n \to \infty} a_{mn}$ exists,
+by the order limit theorem, $a - \epsilon / 2 \le b_m \le a + \epsilon / 2$.
+Therefore, $\abs {b_m - a} \le \epsilon$, as desired.
+\medskip
+\item{} e.
+
+Let $a = \lim _{m,n \to \infty} a_{mn}$.
+Consider the sequence $(b_m)$
+where $b_m = \lim _{n \to \infty} a_{mn}$.
+\hfil\break
+By part (d), $\lim _{m \to \infty} (\lim _{n \to \infty} a_{mn}) =
+\lim _{m \to \infty} b_m = a$.
+Similarly, consider the sequence $(c_n)$
+where $c_n = \lim _{m \to \infty} a_{mn}$.
+By part (d), $\lim _{n \to \infty} (\lim _{m \to \infty} a_{mn}) =
+\lim _{n \to \infty} c_n = a$.
+\bigskip
+\item{2.4.3.} a.
+
+Let $a_1 = \sqrt 2$ and $a_{n + 1} = \sqrt {2 + a_n}$.
+We will show by induction that $a_n < 2$ for all natural numbers $n$.
+$a_1 = \sqrt 2$ is clearly less than $2$.
+Assuming $a_n < 2$, $a_{n + 1} = \sqrt {2 + a_n} < \sqrt {2 + 2} = 2$.
+In addition, $(a_n)$ is strictly increasing.
+We know that $a_n < 2$ for all $n$, so
+$a_{n + 1} = \sqrt {2 + a_n} > \sqrt {a_n + a_n} = \sqrt {2a_n} > \sqrt {a_n ^2} = a_n$.
+Since $(a_n)$ is a strictly increasing sequence that is bounded above,
+by the monotone convergence theorem, $a = \lim a_n$ exists.
+By taking the limit of both sides of the identity
+$a_{n + 1} = \sqrt {2 + a_n}$, we obtain $a = \sqrt {2 + a}$.
+Solving the equation, $a = 2$ or $a = -1$.
+Since $(a_n)$ is a strictly increasing sequence whose first term is positive,
+$a_n$ must be positive for all $n$.
+By the order limit theorem, $a$ must also be positive, so $a = 2$.
+
+\item{} b.
+
+Let $a_1 = \sqrt 2$ and $a_{n + 1} = \sqrt {2a_n}$.
+We will show by induction that $a_n < 2$ for all natural numbers $n$.
+$a_1 = \sqrt 2$ is clearly less that $2$.
+Assuming $a_n < 2$, $a_{n + 1} = \sqrt {2a_n} < \sqrt {(2)(2)} = 2$.
+In addition, $(a_n)$ is strictly increasing.
+We know that $a_n < 2$ for all $n$, so
+$a_{n + 1} = \sqrt {2a_n} > \sqrt {a_n a_n} = a_n$.
+Since $(a_n)$ is a strictly increasing sequence that is bounded above,
+by the monotone convergence theorem, $a = \lim a_n$ exists.
+By taking the limit of both sides of the identity
+$a_{n + 1} = \sqrt {2a_n}$, we obtain $a = \sqrt {2a}$.
+Solving the equation, $a = 2$ or $a = 0$.
+Since $(a_n)$ is a strictly increasing sequence whose first term is $\sqrt 2$,
+$a_n \ge \sqrt 2$ for all $n$.
+By the order limit theorem, $a \ge \sqrt 2$ as well, so $a = 2$.
+\bigskip
+\item{2.4.6.} a.
+
+Since $x$ and $y$ are real, ${1 \over 4} (x - y)^2 \ge 0$.
+Expanding the left side, ${1 \over 4} x^2 - {1 \over 2} xy + {1 \over 4} y^2 \ge 0$.
+Adding $xy$ to both sides, ${1 \over 4} x^2 + {1 \over 2} xy + {1 \over 4} y^2 \ge xy$.
+Since $x$ and $y$ are positive, we can take the square root of both sides to obtain
+$(x + y) / 2 \ge \sqrt {xy}$.
+\medskip
+\item{} b.
+
+We will show that $x_n \le y_n$ for all natural numbers $n$.
+It is given that $x_1 \le y_1$.
+For $n \ge 1$, since $x_{n + 1}$ is the geometric mean of $x_n$ and $y_n$,
+while $y_{n + 1}$ is the arithmetic mean of the same two numbers,
+by part (a), $x_{n + 1} \le y_{n + 1}$.
+We will now show that $(x_n)$ is increasing.
+Since $x_n \le y_n$, $x_{n + 1} = \sqrt {x_n y_n} \ge \sqrt {x_n x_n} = x_n$.
+We will also show that $(y_n)$ is decreasing.
+Since $x_n \le y_n$, $y_{n + 1} = {1 \over 2} (x_n + y_n) \le {1 \over 2} (y_n + y_n) = y_n$.
+In addition, $x_n \le y_1$ for all natural numbers $n$
+since $x_n \le y_n \le y_1$, so $(x_n)$ is bounded above.
+Similarly, $y_n \ge x_n \ge x_1$ for all natural numbers $n$,
+so $(y_n)$ is bounded below.
+Since $(x_n)$ is an increasing sequence that is bounded above,
+$x = \lim x_n$ exists and since $(y_n)$ is a decreasing sequence
+that is bounded below, $y = \lim y_n$ exists as well.
+Taking the limit of both sides of the identity $y_{n + 1} = {1 \over 2} (x_n + y_n)$,
+we obtain $y = {1 \over 2} (x + y)$.
+Simplifying, we obtain $x = y$, as desired.
+\bigskip
+\item{2.4.7.} a.
+
+Let $X_n = \{a_k : k \ge n\}$.
+Since $X_{n + 1} \subset X_n$, any upper bound for $X_n$
+is also an upper bound for $X_{n + 1}$.
+In particular, $y_n = \sup X_n$ is an upper bound for $X_{n + 1}$
+and consequently, $\sup X_n \ge \sup X_{n + 1}$.
+Therefore $(y_n)$ is decreasing.
+Since $(a_n)$ is bounded, there is a positive real number $M$
+such that $a_n \ge -M$ for all natural numbers $n$.
+Therefore, since $X_n$ is a nonempty set whose members
+are all at least $-M$, $\sup X_n \ge -M$ for all natural numbers $M$.
+Since $(y_n)$ is decreasing and bounded below,
+it converges by the monotone convergence theorem.
+\medskip
+\item{} b.
+
+Let $z_n = \inf X_n$ where $X_n$ is defined as in part (a).
+The sequence $(z_n)$ is increasing and bounded above
+by the same argument as in part (a),
+so $\liminf a_n = \lim z_n$ exists.
+\medskip
+\item{} c.
+
+Since $a_n \in X_n$ as defined in part (a),
+$z_n = \inf X_n \le a_n \le \sup X_n = y_n$.
+Since $z_n \le y_n$ for all natural numbers $n$,
+by the order limit theorem, $\liminf a_n = \lim z_n \le \lim y_n = \limsup a_n$,
+as desired.
+
+Let $(a_n) = (1, -1, 1, -1, \cdots)$.
+Clearly, $\liminf a_n = -1$ and $\limsup a_n = 1$,
+so in this case, $\liminf a_n < \limsup a_n$.
+\medskip
+\item{} d.
+
+For the forward direction, we want to show that
+if $\liminf a_n = \limsup a_n = a$, then $\lim a_n = a$.
+Let $y_n = \sup X_n$ and $z_n = \inf X_n$ as defined in part (a).
+Then, as we observed in part (c), $z_n \le a_n \le y_n$.
+Since $\lim z_n = \lim y_n = a$, by the squeeze theorem,
+$\lim a_n = a$, as desired.
+
+For the backward direction, we want to show that
+if $\lim a_n = a$, then $\liminf a_n = \limsup a_n = a$.
+Given $\epsilon > 0$, take $N$ such that
+$\abs {a_n - a} \le \epsilon / 2$ for all $n \ge N$.
+Then $X_n \subset (a - \epsilon / 2, a + \epsilon / 2)$
+for $n \ge N$ and $X_n$ as defined in part (a).
+Then $\sup X_n$ and $\inf X_n$ are both in the interval
+$[a - \epsilon / 2, a + \epsilon / 2]$, so
+$y_n$ and $z_n$ as defined in parts (a) and (b)
+are both in $[a - \epsilon / 2, a + \epsilon / 2]$.
+Therefore, $\abs {y_n - a} < \epsilon$
+and $\abs{z_n - a} < \epsilon$,
+so $\limsup a_n = \lim y_n = a$ and
+$\liminf a_n = \lim z_n = a$, as desired.
+\bigskip
+\item{4.A.}
+
+We will show that $\limsup a_n \in A$, that is,
+there is a subsequence $(a_{n_k})$ of $(a_n)$
+that converges to $\limsup a_n$.
+Let $n_1 = 1$, that is, $a_{n_1} = a_1$.
+Given $n_k$, let $n_{k + 1}$ be such that
+$n_{k + 1} > n_k$ and $\abs{\sup X_{1 + n_k} - a_{n_{k + 1}}} < 1/(k + 1)$,
+where $X_n$ is defined as in exercise 2.4.7.
+Such an $n_{k + 1}$ exists because $\sup X_{1 + n_k} - 1/(k + 1)$
+is not an upper bound for $X_{1 + n_k}$.
+Notice that $X_{n_{k + 1}} \subset X_{1 + n_k}$,
+so $\sup X_{1 + n_k} \ge \sup X_{n_{k + 1}} \ge a_{n_{k + 1}}$.
+Therefore, $\abs{\sup X_{n_{k + 1}} - a_{n_{k + 1}}} < 1/(k + 1)$.
+We claim that $\lim _{k \to \infty} a_{n_k} = \limsup a_n$.
+Given $\epsilon > 0$, take $K$ such that $K > 2 / \epsilon$
+and $\abs {\sup X_{n_k} - \limsup a_n} < \epsilon/2$ for any $k \ge K$.
+Such a $K$ exists because $(\sup X_{n_k}) \to \limsup a_n$ by definition.
+Note that $\abs {a_{n_K} - \sup X_{n_K}} < 1/K < \epsilon/2$.
+For any $k \ge K$, $\abs{a_{n_k} - \limsup a_n} \le
+\abs{a_{n_k} - \sup X_{n_k}} + \abs{\sup X_{n_k} - \limsup a_n} <
+\epsilon/2 + \epsilon/2 = \epsilon$, as desired.
+
+We will now show that $\limsup a_n$ is an upper bound for $A$.
+Let $(a_{n_k})$ be any convergent subsequence of $(a_n)$.
+Since $n_k \ge k$ for all natural numbers $k$,
+$a_{n_k} \in X_k$ and $y_k = \sup X_k \ge a_{n_k}$.
+Therefore, by the order limit theorem,
+$\limsup a_n = \lim y_k \ge \lim a_{n_k}$, as desired.
+
+Since $\limsup a_n$ is an element of $A$ and also and upper bound for $A$,
+$\limsup a_n$ is the maximum of $A$ and is therefore equal to $\sup A$.
+\bigskip
+\item{2.5.5.}
+
+Let $A$ be the set of limits of subsequences $(a_{n_k})$ of $(a_n)$
+as defined in exercise 4.A.
+Notice that $A = \{a\}$.
+By exercise 4.A, $\limsup a_n = \sup A = a$ and,
+by a similar argument, $\liminf a_n = \inf A = a$.
+By exercise 2.4.7, $\lim a_n$ exists and is equal to $a$.
+\bye
