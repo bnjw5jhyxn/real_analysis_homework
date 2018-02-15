@@ -1,0 +1,52 @@
+\def\natural{{\bf N}}
+\centerline{Steve Hsu\hfill workshop 5}
+\item{2.} a.
+\itemitem{$n = 1$)} $2^0 = 1 \le 1 < 2 = 2^1$, so $k = 0$
+\itemitem{} $a_1 = 1 + 1 - 2^0 = 2 - 1 = 1$
+\itemitem{$n = 2$)} $2^1 = 2 \le 2 < 4 = 2^2$, so $k = 1$
+\itemitem{} $a_2 = 2 + 1 - 2^1 = 3 - 2 = 1$
+\itemitem{$n = 3$)} $2^1 = 2 \le 3 < 4 = 2^2$, so $k = 1$
+\itemitem{} $a_3 = 3 + 1 - 2^1 = 4 - 2 = 2$
+\itemitem{$n = 4$)} $2^2 = 4 \le 4 < 8 = 2^3$, so $k = 2$
+\itemitem{} $a_4 = 4 + 1 - 2^2 = 5 - 4 = 1$
+\itemitem{$n = 5$)} $2^2 = 4 \le 5 < 8 = 2^3$, so $k = 2$
+\itemitem{} $a_5 = 5 + 1 - 2^2 = 6 - 4 = 2$
+\itemitem{$n = 4$)} $2^2 = 4 \le 6 < 8 = 2^3$, so $k = 2$
+\itemitem{} $a_6 = 6 + 1 - 2^2 = 7 - 4 = 3$
+\itemitem{$n = 7$)} $2^2 = 4 \le 7 < 8 = 2^3$, so $k = 2$
+\itemitem{} $a_7 = 7 + 1 - 2^2 = 8 - 4 = 4$
+\itemitem{$n = 8$)} $2^3 = 8 \le 8 < 16 = 2^4$, so $k = 3$
+\itemitem{} $a_8 = 8 + 1 - 2^3 = 9 - 8 = 1$
+\itemitem{$n = 9$)} $2^3 = 8 \le 9 < 16 = 2^4$, so $k = 3$
+\itemitem{} $a_9 = 9 + 1 - 2^3 = 10 - 8 = 2$
+\medskip
+\item{} b.
+
+First, we will show that $\natural \subset E$,
+that is, for every natural number $x$,
+there is a subsequence $(a_{n_k})$ of $(a_n)$
+that converges to $x$.
+Given a natural number $x$,
+find the unique integer $y$ such that $2^y \le x < 2^{y + 1}$.
+Let $n_k = x - 1 + 2^k$.
+For $k > y$, $k$ satisfies $2^k \le n_k < 2^{k + 1}$
+since $x - 1 < 2^{y + 1}$.
+Therefore, $a_{n_k} = n_k + 1 - 2^k = x - 1 + 2^k + 1 - 2^k = x$,
+so $(a_{n_k})$ is eventually constant and therefore converges to $x$, as desired.
+
+Next, we will show that $E \subset \natural$,
+that is, for every convergent subsequence $(a_{n_k})$ of $(a_n)$,
+$\lim _{k \to \infty} a_{n_k}$ is a natural number.
+Given a convergent subsequence $(a_{n_k})$, let $a = \lim _{k \to \infty} a_{n_k}$.
+Take $\epsilon = 1/2$.
+Since $(a_{n_k}) \to a$, $(a_{n_k})$ is eventually in the interval
+$(a - 1/2, a + 1/2)$.
+Notice that there is at most one integer in $(a - 1/2, a + 1/2)$.
+Since $a_{n_k}$ is an integer for all $k$,
+there is such an integer.
+Call this integer $x$.
+Since $(a_{n_k})$ is eventually in the interval $(a - 1/2, a + 1/2)$,
+and $a_{n_k}$ is an integer for all $k$,
+$(a_{n_k})$ is eventually constant and must therefore converge to $x$,
+which is a natural number, as desired.
+\bye
