@@ -1,0 +1,166 @@
+\def\abs#1{\vert{#1}\vert}
+\centerline{Steve Hsu\hfill homework 5}
+\item{2.4.10.} a.
+
+If $a_n = 1/n$, then
+$p_m = \prod _{n=1} ^m (1 + 1/n) = \prod _{n=1} ^m (n+1)/n =
+(2/1)(3/2)\cdots((m+1)/m) = m+1$, which clearly diverges.
+
+If $a_n = 1/n^2$, then
+$(p_m) = (2, 5/2, 25/9, 425/144, 442/144, \ldots)$,
+which looks like it converges.
+\medskip
+\item{} b.
+
+For the forward direction, assume that
+$\sum _{n=1} ^\infty a_n$ converges to $a$.
+Since the sequence of partial sums $(s_m)$ is monotonically increasing
+and $1 + x \le 3^x$ for positive $x$,
+$p_m = \prod _{n=1} ^m (1+a_n) \le \prod _{n=1} ^m 3^{a_n} =
+3 ^{\sum _{n=1} ^m a_n} \le 3 ^a$, so $(p_m)$ is bounded.
+Since $a_n \ge 0$ for all $n$ and $p_{m+1} = p_m (1 + a_n) \ge p_m$,
+$(p_m)$ is increasing.
+Therefore, by the monotone convergence theorem, $(p_m)$ converges, as desired.
+
+For the backward direction, assume that
+$\prod _{n=1} ^\infty (1+a_n)$ converges to $a$.
+Since $a_n \ge 0$ for all $n$,
+all terms of $\prod _{n=1} ^m (1 + a_n)$ are nonnegative,
+and since the sequence of partial products $(p_m)$ is monotonically increasing,
+$s_m = \sum _{n=1} ^m a_n \le \prod _{n=1} ^m (1+a_n) \le a$,
+so $(s_m)$ is bounded.
+Since $(s_m)$ is also increasing, by the monotone convergence theorem,
+$(s_m)$ converges, as desired.
+\bigskip
+\item{2.6.2.} a. $a_n = (-1)^{n+1} (1/n)$
+
+Clearly this sequence converges to $0$ (and is therefore Cauchy)
+but is not monotone, since it alternates between positive and negative values.
+\medskip
+\item{} b. impossible
+
+Since every Cauchy sequence is bounded,
+there is a positive real number $M$ such that
+$\abs{a_n} \le M$ for all $n$.
+Therefore, for any subsequence $(a_{n_k})$ of $(a_n)$,
+$\abs{a_{n_k}} \le M$ for all $k$, so $(a_{n_k})$ is bounded.
+\medskip
+\item{} c. impossible
+
+Any divergent monotone sequence $(a_n)$ cannot be bounded, since
+if it were bounded, by the monotone convergence theorem, it would converge.
+If $(a_n)$ is increasing, then $(a_n)$ is bounded below by $a_1$
+and is therefore not bounded above.
+Since $(a_n)$ is not bounded above,
+any positive real number $M$ is not an upper bound for $(a_n)$.
+Therefore, there is some $N_1$ such that $a_{N_1} > M$.
+Since $(a_n)$ is increasing, $a_n > M$ for all $n \ge N_1$.
+Analogously, if $(a_n)$ is decreasing,
+then for any positive real number $M$
+there is some $N_2$ such that $a_n < -M$ for all $n \ge N_2$.
+Therefore, eventually $\abs{a_n} > M$ for all positive real numbers $M$.
+Let $(a_{n_k})$ be a subsequence of $(a_n)$.
+Given a positive real number $M$, take $N$
+such that $\abs{a_n} > M$ for all $n \ge N$.
+Since $n_k \ge k$ for all $k$, $\abs{a_{n_k}} \ge M$ for all $k \ge N$.
+Therefore, $(a_{n_k})$ is not bounded and is therefore not Cauchy.
+\medskip
+\item{} d. $a_n = n$ if $n$ is even and $a_n = 0$ if $n$ is odd
+
+This sequence is not bounded, since given $M > 0$,
+take $N$ such that $N > M$.
+There is a even number $n \ge N$, so $a_n = n \ge N > M$.
+The sequence $(a_{n_k}) = (0,0,\ldots)$ converges to $0$, so it is Cauchy.
+\bigskip
+\item{2.7.4.} a. $x_n = 1/n$, $y_n = (-1)^{n+1}$
+
+The series $\sum _{n=1} ^\infty x_n y_n = \sum _{n=1} ^\infty (-1)^{n+1} (1/n)$,
+which converges by the alternating series test.
+\medskip
+\item{} b. $x_n = (-1)^{n+1} (1/n)$, $y_n = (-1)^{n+1}$
+
+The series $\sum _{n=1} ^\infty x_n$ converges by the alternating series test,
+and $(y_n)$ is bounded since $\abs{y_n} \le 1$ for all $n$.
+The series $\sum _{n=1} ^\infty x_n y_n = \sum _{n=1} ^\infty 1/n$
+is the harmonic series, which diverges.
+\medskip
+\item{} c. impossible
+
+Assume that $\sum x_n = a$ and $\sum (x_n + y_n) = b$.
+Then by the algebraic limit theorem for series,
+$\sum -x_n = -a$ and $\sum y_n = \sum (x_n + y_n - x_n) = b - a$,
+so $\sum y_n$ must converge.
+\medskip
+\item{} d. $x_n = 1/n$ if $n$ is even, $x_n = 0$ if $n$ is odd
+
+Let $s_m = \sum _{n=1} ^m x_n$.
+Then $s_{2k} = 0 + 1/2 + 0 + 1/4 + \cdots + 0 + 1/(2k) =
+(1/2) \sum _{n=1} ^k 1/n$ has partial sums
+equal to half those of the harmonic series, which diverges.
+\bigskip
+\item{2.7.8.} a. true
+
+We will show that $\sum a_n ^2$ is Cauchy.
+Given $\epsilon > 0$, since $\sum \abs{a_n}$ is Cauchy,
+we can take $N$ such that for all $n > m \ge N$,
+$\sum _{k=m+1} ^n \abs{a_n} < \sqrt \epsilon$.
+Squaring both sides of the inequality
+and dropping the cross terms, which are nonnegative,
+we have that $\sum _{k=m+1} ^n a_n ^2 < \epsilon$,
+so $\sum a_n ^2$ is Cauchy, as desired.
+\medskip
+\item{} b. false
+
+Let $a_n = b_n = (-1)^{n+1} / \sqrt n$.
+Then $\sum a_n$ converges by the alternating series test,
+while $(b_n) \to 0$.
+The series $\sum a_n b_n = \sum 1/n$ is the harmonic series,
+which diverges.
+\medskip
+\item{} c. true
+
+We will prove this statement by contraposition,
+that is, we will show that if $\sum n^2 a_n$ converges,
+then $\sum a_n$ converges absolutely or diverges.
+Assume that $\sum n^2 a_n$ converges.
+Then the sequence $(n^2 a_n) \to 0$.
+Therefore there is some natural number $N$ such that
+$\abs{n^2 a_n} < 1$ for all $n \ge N$.
+Therefore, since $n^2 \ge 0$, eventually $\abs{a_n} < 1/n^2$.
+Since $\sum 1/n^2$ converges, by the comparison test,
+$\sum \abs{a_n}$ converges as well,
+so $\sum a_n$ converges absolutely, as desired.
+\bigskip
+\item{2.7.10.} a.
+
+The product can be written in the form $\prod (1 + 1/2^n)$,
+which converges by exercise 2.4.10.b since $\sum 1/n^2$ converges.
+\medskip
+\item{} b.
+
+Each partial product is positive and smaller than the previous one,
+so by the monotone convergence theorem, the sequence of partial products converges.
+
+The product $\prod _{n=1} ^\infty (2k-1)/(2k)$ converges to $0$.
+Let $p_m = \prod _{n=1} ^m (2k-1)/(2k)$ be the sequence of partial products.
+Consider the product $\prod _{n=1} ^\infty (2k)/(2k+1)$
+with the sequence of partial products $(q_m)$.
+The sequence $(q_m)$ converges for the same reasons $(p_m)$ converges.
+Notice that since $(2k + 1)(2k - 1) = 4k^2 - 1 < 4k^2 = (2k)(2k)$ for all $k$,
+$(2k-1)/(2k) < (2k)/(2k+1)$ and $p_m < q_m$ for all $m$.
+In addition, consider the product $\prod _{n=1} ^\infty n/(n+1)$,
+which has the sequence $(r_m)$ of partial products.
+Clearly, $(r_m) \to 0$, so the subsequence $(r_{2k}) \to 0$ as well.
+Notice that $r_{2k} = p_k q_k$, so given $\epsilon > 0$,
+there is some $K$ such that $p_k ^2 \le p_k q_k < \epsilon^2$
+for all $k \ge K$.
+Taking the square root of both sides, $p_k < \epsilon$, so $(p_k) \to 0$, as desired.
+\medskip
+\item{} c.
+
+This product can be written in the form $\prod _{n=1} ^\infty (1 + 1/(4n^2 - 1))$.
+Since $3n^2 > 1$ for natural numbers $n$, we have that $4n^2 - 1 > n^2$,
+so $1/(4n^2 - 1) < 1/n^2$.
+Since $\sum 1/n^2$ converges, by the comparison test, $\sum 1/(4n^2 - 1)$ converges as well.
+By exercise 2.4.10.b, $\prod (1 + 1/(4n^2 - 1))$ converges, as desired.
+\bye
