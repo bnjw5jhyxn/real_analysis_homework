@@ -1,0 +1,179 @@
+\def\abs#1{\vert#1\vert}
+\def\real{{\bf R}}
+\def\natural{{\bf N}}
+\centerline{Steve Hsu\hfill homework 6}
+\item{3.2.4.} a.
+
+If $s \in A$, then since $A \subset \overline A$,
+$s \in \overline A$, as desired.
+
+Otherwise, since $s = \sup A$, for any $\epsilon > 0$,
+$s - \epsilon$ is not an upper bound for $A$.
+Therefore, there is some element $x \in A$ such that
+$s - \epsilon < x < s$, so $\abs{x - s} < \epsilon$.
+Therefore, $s$ is a limit point of $A$
+and is consequently in $\overline A$, as desired.
+\medskip
+\item{} b. no
+
+Since $s$ is an upper bound of $A$,
+there is no $\epsilon > 0$ satisfying
+$s + \epsilon/2 \in A$,
+so there is no $\epsilon > 0$ satisfying
+$(s - \epsilon, s + \epsilon) \subset A$.
+Since $A$ is open, $s \notin A$.
+\bigskip
+\item{3.2.6.} a. false
+
+The set $(-\infty,\sqrt 2) \cup (\sqrt 2, +\infty)$
+is an open set containing every rational
+that is not equal to $\real$.
+\medskip
+\item{} b. true
+
+Let $F_1 \supset F_2 \supset \ldots$ be a sequence of
+nonempty nested bounded closed sets.
+Take a sequence $(x_n)$ where $x_n \in F_n$ for all natural numbers $n$.
+Since $(x_n)$ is bounded, it has a convergent subsequence $(x_{n_k})$
+by the Bolzano-Weierstrass Theorem.
+Let $x = \lim x_{n_k}$.
+Since $x_{n_\ell} \in F_{n_\ell} \subset F_{n_k} \subset F_n$
+for all $\ell \ge k$,
+eventually $x_{n_k} \in F_n$ for all natural numbers $n$.
+Since $F_n$ is closed and $x$ is a limit point of $F_n$,
+$x$ must also be in $F_n$.
+Therefore, $x \in \bigcap _{k=1} ^\infty F_n$, so
+$\bigcap _{k=1} ^\infty F_n \ne \emptyset$, as desired.
+\medskip
+\item{} c. true
+
+Let $A$ be a nonempty open set and let $x \in A$.
+Then there exists $\epsilon > 0$ such that
+$(x - \epsilon, x + \epsilon) \subset A$.
+Since the rational numbers are dense in the real numbers,
+there is a rational number in this interval,
+so $A$ contains a rational number, as desired.
+\medskip
+\item{} d. false
+
+Let $F = \{\sqrt 2\} \cup \{(1 + 1/n)\sqrt 2: n \in \natural\}$.
+Notice that $F$ is bounded by $3$
+and that $\sqrt 2$ is the only limit point of $F$.
+Clearly, $F$ is an bounded infinite closed set
+that does not contain a rational number.
+\medskip
+\item{} e. true
+
+Notice that a real number $a$ is in the Cantor set
+if and only if it can be written in the form
+$a = \sum _{k=1} ^\infty c_k ({1 \over 3})^k$,
+where $c_k = 0$ or $c_k = 2$ for all natural numbers $k$.
+Let $(x_n)$ be a convergent sequence of elements of the Cantor set.
+Since $(x_n)$ is Cauchy by the Cauchy Criterion,
+taking $\epsilon = ({1 \over 3})^K$ for any natural number $K$,
+there exists a natural number $N$ such that the first $K$ terms of
+$x_n = \sum _{k=1} ^\infty c_{nk} ({1 \over 3})^k$
+are identical for all $n \ge N$.
+In other words, for all natural numbers $k$, $c_{nk}$
+is eventually constant with respect to $n$.
+Let $c_k$ be this constant value, which must be either $0$ or $2$.
+We will show that $x_n$ converges to $\sum _{k=1} ^\infty c_k ({1 \over 3})^k$.
+Given $\epsilon > 0$, take $K$ such that $({1 \over 3})^K < \epsilon$.
+Take $N$ such that for all $n \ge N$ and $k \le K$, $c_{nk} = c_k$.
+Then we have that for $n \ge N$,
+$\abs{(\sum _{k=1} ^\infty c_{nk} ({1 \over 3})^k) -
+(\sum _{k=1} ^\infty c_k ({1 \over 3})^k)} =
+\abs{\sum _{k=1} ^\infty (c_{nk} - c_k) ({1 \over 3})^k} =
+\abs{\sum _{k=K+1} ^\infty (c_{nk} - c_k) ({1 \over 3})^k} \le
+\sum _{k=K+1} ^\infty \abs{c_{nk} - c_k} ({1 \over 3})^k \le
+\sum _{k=K+1} ^\infty 2 ({1 \over 3})^k = ({1 \over 3})^K < \epsilon$.
+Therefore, $(x_n)$ converges to $\sum _{k=1} ^\infty c_k ({1 \over 3})^k$,
+that is, $(x_n)$ converges to an element of the Cantor set.
+Since any convergent sequence $(x_n)$ consisting of elements in the Cantor set
+converges to an element of the Cantor set, the Cantor set is closed, as desired.
+\bigskip
+\item{3.2.12.}
+
+Given a real number $s$, define $L_s = \{x \in A : x < s\}$
+and $G_s = \{x \in A : x > s\}$.
+Let $C_L$ be the set of real numbers $s$ such that $L_s$ is uncountable.
+If $s \in C_L$, then for any nonnegative real number $t$,
+$L_s \subset L_{s + t}$, so $s + t \in C_L$.
+In other words, there is a number $y$ such that
+$C_L = (y, +\infty)$ or $C_L = [y, +\infty)$.
+
+We will show that $C_L = (y, +\infty)$.
+Since $C_L = [y, +\infty)$ or $C_L = (y, +\infty)$,
+we have that $y = \inf C_L$.
+Then for any $\epsilon > 0$,
+$L_{y - \epsilon} = \{x \in A : x < y - \epsilon\}$ is countable or finite.
+Let $A_n = \{x \in A : x < y - 1/n\}$ for each natural number $n$.
+Since $A_n$ is finite or countable for all $n$,
+$\bigcup _{n=1} ^\infty A_n = \{x \in A : x < y\} = L_y$
+is also finite or countable.
+Therefore, $y \notin C_L$, so $C_L = (y, +\infty)$.
+
+Similarly, let $C_G$ be the set of real numbers $s$
+such that $G_s$ is uncountable.
+By the same argument, there is a real number $z$
+such that $C_G = (-\infty, z)$.
+
+Since the union of two finite or countable sets is finite or countable,
+and $L_s \cup G_s = A \setminus \{s\}$ is uncountable,
+$L_s$ or $G_s$ is uncountable for any real number $s$.
+Consequently, $C_L \cup C_G = \real$ and $y < z$.
+Therefore, $B = C_L \cap C_R = (y,z)$, which is open, as desired.
+\bigskip\goodbreak
+\item{3.2.14.} a.
+
+For the forward direction, assume that $E \subset \real$ is closed.
+Then $E$ contains its set of limit points, $E'$.
+Since $E' \subset E$, we have that $\overline E = E \cup E' = E$.
+
+For the backward direction, assume that $\overline E = E$.
+Let $E'$ be the set of limit points of $E$.
+We have that $E' \subset E \cup E' = \overline E = E$,
+so $E$ is closed, as desired.
+\smallskip
+For the forward direction, assume that $E$ is open.
+We have that for all $x \in E$,
+there exists $\epsilon > 0$ such that $V_\epsilon(x) \subset E$.
+Therefore, the set of all $x \in E$ such that
+there exists $\epsilon > 0$ such that $V_\epsilon(x) \subset E$
+is simply all of $E$, that is, $E^\circ = E$.
+
+For the backward direction, assume that $E^\circ = E$.
+Then the set of $x \in E$ such that
+there exists $\epsilon > 0$ such that $V_\epsilon(x) \subset E$
+is all of $E$.
+Therefore, we have that for all $x \in E$,
+there exists $\epsilon > 0$ such that $V_\epsilon(x) \subset E$,
+that is, $E$ is open, as desired.
+\medskip
+\item{} b.
+
+By definition, $\overline E^c =
+\{x \in \real : x \notin \overline E\}$, that is,
+$\overline E^c$ is the set of real numbers $x$ such that
+it is not the case that for all $\epsilon > 0$,
+$V_\epsilon(x) \cap E \ne \emptyset$.
+This is the set of real numbers $x$ such that there exists $\epsilon > 0$
+such that $V_\epsilon(x) \cap E = \emptyset$.
+Also by definition, $(E^c)^\circ$ is the set of real numbers $x$ such that
+there exists $\epsilon > 0$ such that $V_\epsilon(x) \subset E^c$.
+This is the set of real numbers $x$ such that there exists $\epsilon > 0$
+such that $V_\epsilon(x) \cap E = \emptyset$,
+which is equal to $\overline E^c$, as desired.
+\smallskip
+By definition, $(E^\circ)^c =
+\{x \in \real : x \notin E^\circ\}$, that is,
+$(E^\circ)^c$ is the set of real numbers $x$ such that
+there does not exist $\epsilon > 0$ such that $V_\epsilon(x) \subset E$.
+This is the set of real numbers $x$ such that
+for all $\epsilon > 0$, $V_\epsilon(x) \not\subset E$.
+Also by definition, $\overline{E^c}$ is the set of real numbers $x$ such  that
+for all $\epsilon > 0$, $V_\epsilon(x) \cap E^c \ne \emptyset$.
+This is the set of real numbers $x$ such that for all $\epsilon > 0$,
+$V_\epsilon(x) \not\subset E$,
+which is equal to $(E^\circ)^c$, as desired.
+\bye
