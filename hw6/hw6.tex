@@ -165,15 +165,8 @@ This is the set of real numbers $x$ such that there exists $\epsilon > 0$
 such that $V_\epsilon(x) \cap E = \emptyset$,
 which is equal to $\overline E^c$, as desired.
 \smallskip
-By definition, $(E^\circ)^c =
-\{x \in \real : x \notin E^\circ\}$, that is,
-$(E^\circ)^c$ is the set of real numbers $x$ such that
-there does not exist $\epsilon > 0$ such that $V_\epsilon(x) \subset E$.
-This is the set of real numbers $x$ such that
-for all $\epsilon > 0$, $V_\epsilon(x) \not\subset E$.
-Also by definition, $\overline{E^c}$ is the set of real numbers $x$ such  that
-for all $\epsilon > 0$, $V_\epsilon(x) \cap E^c \ne \emptyset$.
-This is the set of real numbers $x$ such that for all $\epsilon > 0$,
-$V_\epsilon(x) \not\subset E$,
-which is equal to $(E^\circ)^c$, as desired.
+Let $A = E^c$.
+We have from the part above that $\overline A^c = (A^c)^\circ$.
+Therefore, $(E^circ)^c = ((A^c)^\circ)^c = (\overline A^c)^c =
+\overline A = \overline{E^c}$, as desired.
 \bye
