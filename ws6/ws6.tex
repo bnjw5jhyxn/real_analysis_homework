@@ -1,0 +1,57 @@
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill workshop 6}
+\item{2.} a.
+
+Let $A$ be a set of real numbers.
+By definition, $(A^\circ)^c$ is the set of real numbers $x$
+that are not in $A^\circ$, that is,
+$(A^\circ)^c$ is the set of real numbers $x$ such that
+there is no $\epsilon > 0$ satisfying $V_\epsilon(x) \subset A$.
+In other words, $(A^\circ)^c$ is the set of real numbers $x$
+such that for all $\epsilon > 0$, $V_\epsilon(x) \not\subset A$.
+Also by definition, $\overline{A^c}$ is the set of real numbers $x$
+such that there is a sequence $(a_n) \subset A^c$
+that converges to $x$.
+
+To show that $(A^\circ)^c \subset \overline{A^c}$,
+let $x$ be an arbitrary element of $(A^\circ)^c$, that is,
+assume that for all $\epsilon > 0$, $V_\epsilon(x) \not\subset A$.
+For each natural number $n$, we have that $V_{(1/n)}(x) \not\subset A$,
+that is, there is some real number outside of $A$ in $V_{(1/n)}(x)$.
+Let $a_n$ be this real number.
+Notice that for all natural numbers $n$, $a_n \notin A$, that is,
+$(a_n) \subset A^c$.
+We will show that $(a_n)$ converges to $x$.
+Given $\epsilon > 0$ take $N$ such that $1/N < \epsilon$.
+For all $n \ge N$, since $1/n \le 1/N < \epsilon$, we have that
+$a_n \in V_{(1/n)}(x) \subset V_{(1/N)}(x)$, that is,
+$\abs{a_n - x} \le 1/N < \epsilon$.
+Therefore, there is a sequence $(a_n) \subset A^c$ that converges to $x$,
+so $x$ is an element of $\overline{A^c}$.
+
+To show that $\overline{A^c} \subset (A^\circ)^c$,
+let $x$ be an arbitrary element of $\overline{A^c}$, that is,
+assume that there is a sequence $(a_n) \subset A^c$ converging to $x$.
+Given $\epsilon > 0$, since $(a_n)$ converges to $x$,
+we can take $n$ such that $\abs{a_n - x} < \epsilon$.
+By definition, $a_n \in V_\epsilon(x)$ and $a_n \in A^c$.
+Since $a_n \in V_\epsilon(x)$ and $a_n \notin A$,
+we have that $V_\epsilon(x) \not\subset A$.
+Since for all $\epsilon > 0$, $V_\epsilon(x) \not\subset A$,
+$x$ is an element of $(A^\circ)^c$, as desired.
+\medskip
+Let $B = A^c$.
+Since $\overline{B^c} = (B^\circ)^c$ by part (a), we have that
+$\overline A^c = \overline{(A^c)^c}^c = \overline{B^c}^c =
+((B^\circ)^c)^c = B^\circ = (A^c)^\circ$, as desired.
+\bigskip
+\item{} b.
+
+Let $B = (0,1) \cup (1,2)$.
+Clearly, $B^\circ = (0,1) \cup (1,2)$, while
+$\overline B^\circ = (0,2)^\circ = (0,2) \ne (0,1) \cup (1,2)$.
+\medskip
+Let $C = \{0\}$.
+Clearly, $\overline C = \{0\}$, while
+$\overline{C^\circ} = \overline \emptyset = \emptyset \ne \{0\}$.
+\bye
