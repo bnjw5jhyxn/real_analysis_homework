@@ -1,0 +1,192 @@
+\def\abs#1{\vert#1\vert}
+\def\real{{\bf R}}
+\def\natural{{\bf N}}
+\centerline{Steve Hsu\hfill homework 7}
+\item{3.3.4.} a. both compact and closed
+
+Since $K$ is compact, $K$ is closed and bounded.
+We have that $K \cap F$ is also closed since
+it is an intersection of closed sets.
+Since $K$ is bounded, there is a positive real number $M$
+such that $\abs x \le M$ for all $x \in K$.
+Notice that $\abs x \le M$ for all $x \in K \cap F$,
+so $K \cap F$ is bounded.
+Since $K \cap F$ is closed and bounded, it is compact.
+\medskip
+\item{} b. closed
+
+Since $\overline{F^c \cup K^c}$ is the closure of a set, it is closed.
+It is not necessarily bounded.
+For example, take $F = K = \emptyset$.
+Then $\overline{F^c \cup K^c} = \overline{\emptyset^c \cup \emptyset^c} =
+\overline{\real \cup \real} = \overline{\real} = \real$,
+which is clearly not bounded.
+\medskip
+\item{} c. neither.
+
+Take $K = [0,1]$ and $F = [1,2]$.
+Then $K \setminus F = [0,1)$, which is not closed and not compact.
+\medskip
+\item{} d. both compact and closed
+
+\proclaim Lemma. If a set $A$ is bounded, then $\overline A$ is also bounded.
+
+Let $a$ be an upper bound for $A$.
+We will show that $a$ is also an upper bound for $A'$,
+the set of limit points of $A$,
+that is, we will show that $\lim x_n \le a$
+for all convergent sequences $(x_n) \subset A$.
+Let $(x_n) \subset A$ be a convergent sequence.
+Since $a$ is an upper bound for $a$,
+we have that $x_n \le a$ for all $n \in \natural$.
+By the order limit theorem, $\lim x_n \le a$.
+Since $a$ is an upper bound for both $A$ and $A'$,
+it follows that $a$ is an upper bound for $\overline A = A \cup A'$,
+so $\overline A$ is bounded above.
+By the same argument, $\overline A$ is bounded below,
+so $\overline A$ is bounded, as desired.
+\smallskip
+Since $\overline{K \cap F^c}$ is the closure of a set, it is closed.
+By the argument in part (a), since $K$ is bounded,
+$K \cap F^c$ is also bounded.
+By the lemma, it follows that $\overline{K \cap F^c}$ is also bounded.
+Since $\overline{K \cap F^c}$ is closed and bounded,
+it is compact, as desired.
+\bigskip
+\item{3.3.6.} a.
+
+The empty set, which is finite, compact, and closed, does not have a maximum.
+
+Every nonempty finite set has a maximum.
+We will show by induction that for all natural numbers $n$,
+every finite set with $n$ elements has a maximum.
+For the base case, let $A$ be a set with exactly one element.
+Let $x$ be this element.
+Then $x = \max A$.
+For the inductive step, assume that
+every set with exactly $n$ elements has a maximum.
+Let $A$ be a set with exactly $n + 1$ elements.
+Then we can write $A = \{x_1, x_2, \ldots, x_n, x_{n+1}\}$.
+Let $B = \{x_1, \ldots, x_n\}$.
+Notice that $B$ has exactly $n$ elements and that $A = B \cup \{x_{n+1}\}$.
+By the induction hypothesis, $B$ has a maximum.
+Let $y = \max B$.
+We have two cases.
+If $y \ge x_{n+1}$, then $y$ is an upper bound for $A$.
+Since $y = \max B$, we have that $y \in B \subset A$, so $y \in A$.
+Therefore, $y = \max A$.
+If $x_{n+1} \ge y$, then $x_{n+1} \ge y \ge b$ for all $b \in B$,
+and $x_{n+1} \ge x_{n+1}$,
+so $x_{n+1}$ is an upper bound for $A$.
+Since $x_{n+1}$ is an upper bound for $A$ and $x_{n+1} \in A$,
+we have that $x_{n+1} = \max A$.
+Since $\max A$ exists in either case, $A$ has a maximum.
+
+Every nonempty compact set $K$ has a maximum.
+Since $K$ is compact, $K$ is closed and bounded.
+Let $a = \sup K$.
+We will show by contradiction that $a \in K$.
+Assume for contradiction that $a \notin K$.
+Then given $\epsilon > 0$, since $a = \sup A$,
+we have that $a - \epsilon$ is not an upper bound for $A$.
+Therefore, there exists $x \in A$ such that $a - \epsilon < x < a$,
+that is, $x \ne a$ and $\abs{x - a} < \epsilon$.
+Therefore, $a$ is a limit point of $K$.
+Since $K$ is closed and $a$ is a limit point of $A$,
+$A \in K$, contradicting our assumption that $a \notin K$.
+Since $a$ is an upper bound for $K$ and $a \in K$,
+we have that $a = \max K$, as desired.
+
+A nonempty closed set does not necessarily have a maximum.
+The interval $[0,\infty)$ is closed and has no maximum.
+\medskip
+\item{} b.
+
+\proclaim Lemma. Let $S$ and $T$ be sets.
+If $S$ is finite and there is an onto function
+$f: S \to T$, then $T$ is finite.
+
+Since $S$ is finite, we can write
+$S = \{x_1, x_2, \ldots, x_n\}$, where $n$ is the number of elements of $S$.
+Since $f$ is onto, we have that $T = f(S) =
+\{f(x_1), f(x_2), \ldots, f(x_n)\}$, which is clearly finite.
+\smallskip
+Notice that there is an onto function $f: A \times B \to A+B$,
+defined by $f(x,y) = x + y$.
+Since $A$ and $B$ are finite,
+let $m$ be the number of elements of $A$ and
+let $n$ be the number of elements of $B$.
+Then $A \times B$ has $mn$ elements, so it is finite.
+By the lemma, we have that $A + B = f(A \times b)$
+is also finite, as desired.
+
+We will show that if $A$ and $B$ are compact,
+then $A + B$ is also compact, that is,
+every sequence $(x_n) \subset A + B$ has a subsequence
+converging to a point in $A + B$.
+Let $(x_n) \subset A + B$ be a sequence.
+By definition of $A + B$, we can write $x_n = a_n + b_n$,
+where $a_n \in A$ and $b_n \in B$ for each natural number $n$.
+Since $A$ is compact, $(a_n)$ has a subsequence $(a_{n_k})$
+that converges to a point $a \in A$.
+Since $B$ is compact, $(b_{n_k})$ has a subsequence $(b_{n_{k_\ell}})$
+that converges to a point $b \in B$.
+Notice that $(a_{n_{k_\ell}})$ also converges to $a$.
+Therefore, $(x_{n_{k_\ell}}) = (a_{n_{k_\ell}} + b_{n_{k_\ell}})$
+converges to $a + b$, which is in $A + B$.
+
+If $A$ and $B$ are closed, $A + B$ is not necessarily closed.
+Take $A = \{n + 1/n : n \in \natural, n \ge 2\}$ and
+$B = \{-n : n \in \natural, n \ge 2\}$.
+Since $A$ and $B$ have no limit points, they are closed.
+Notice that the sequence $(n + 1/n - n) = (1/n) \subset A+B$,
+so $0$ is a limit point of $A + B$.
+Since all elements of $A$ are non-integers and
+all elements of $B$ are integers,
+there are no elements $a \in A$ and $b \in B$ such that $a + b = 0$,
+so $A + B$ does not contain $0$, which is a limit point of $A + B$.
+\medskip
+\item{} c.
+
+\proclaim Lemma. Let $A_1 \supset A_2 \supset \cdots$
+be a nested sequence of finite sets.
+There is a natural number $k$ such that
+$A_n = A_k$ for all $n$ such that $n \ge k$.
+
+Since $A_1$ is finite,
+there are finitely many natural numbers between $|A_1|$ and $0$.
+Since $A_n \subseteq A_{n-1}$ for each natural number $n \ge 2$,
+$|A_n| \le |A_{n-1}|$.
+Therefore, there are finitely many natural numbers $n$ such that
+$|A_n| < |A_{n-1}|$.
+Let $k$ be the largest such $n$.
+We can now conclude that for each $n$ such that $n \ge k$,
+$|A_n| = |A_k|$, and since $A_n \subseteq A_k$,
+we have $A_n = A_k$, as desired.
+\smallskip
+Let $\{A_n : n \in \natural\}$ be a collection of finite sets.
+Let $B_n = \bigcap _{k=1} ^n A_k$.
+Notice that $B_n = \bigcap _{k=1} ^n A_k$ is nonempty by the problem statement
+and that $B_1 \supset B_2 \supset \cdots$ is a nested sequence of finite sets.
+By the lemma, there is a natural number $k$ such that
+$B_n = B_k$ for all $n \ge k$.
+Then $\bigcap _{n=1} ^\infty A_n = \bigcap _{n=1} ^\infty B_n =
+\bigcap _{n=1} ^k B_n = B_k$ is nonempty, as desired.
+
+Let $\{A_n : n \in \natural\}$ be a collection of compact sets.
+Let $B_n = \bigcap _{k=1} ^n A_k$.
+Notice that $B_n = \bigcap _{k=1} ^n A_k$ is nonempty by the problem statement,
+that $B_n$ is compact since it is the intersection of compact sets,
+and that $B_1 \supset B_2 \supset \cdots$ is a nested sequence of compact sets.
+By the nested compact set property, we have that
+$\bigcap _{n=1} ^\infty A_n = \bigcap _{n=1} ^\infty B_n$
+is nonempty, as desired.
+
+Let $\{A_n : n \in \natural\}$ be a collection of closed sets.
+Then $\bigcap _{n=1} ^\infty A_n$ is not necessarily nonempty.
+Take $A_n = [n, \infty)$.
+By the Archimedean property, for any real number $x$,
+there is a natural number $n$ such that $n > x$.
+Therefore, $x \notin A_n$, so $x \notin \bigcap _{n=1} ^\infty A_n$,
+so $\bigcap _{n=1} ^\infty A_n$ is empty, as desired.
+\bye
