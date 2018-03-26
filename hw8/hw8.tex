@@ -1,0 +1,231 @@
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill homework 8}
+\item{3.3.5.} a. true
+
+Let $\{K _\lambda : \lambda \in \Lambda\}$
+be an arbitrary collection of compact sets.
+Since $K _\lambda$ is closed for all $\lambda \in \Lambda$,
+$\bigcap _{\lambda \in \Lambda} K _\lambda$ is also closed.
+Let $\lambda _0$ be an arbitrary element of $\Lambda$.
+Since $K _{\lambda _0}$ is bounded,
+$\bigcap _{\lambda \in \Lambda} K _\lambda$ is also bounded.
+Therefore, $\bigcap _{\lambda \in \Lambda} K _\lambda$
+is compact, as desired.
+\medskip
+\item{} b. false
+
+Let $K_n = [1/n, n]$ for each natural number $n$.
+Clearly, $K_n$ is compact for each $n$,
+but $\bigcup _{n = 1} ^\infty K_n = (0, +\infty)$,
+which is not compact.
+\medskip
+\item{} c. false
+
+Let $A = (0,1)$ and $K = [0,1]$.
+Clearly, $K$ is compact, but $A \cap K = (0,1)$,
+which is not compact.
+\medskip
+\item{} d. false
+
+Let $F_n = [n, +\infty)$ for each natural number $n$.
+Then $\bigcap _{n = 1} ^\infty F_n = \emptyset$.
+\bigskip
+\item{3.3.7.} a.
+
+We will show by induction on $n$ that
+there exist $x_n$ and $y_n$ in $C_n$ such that $x_n + y_n = s$.
+For the base case, recall that $C_1 = [0, 1/3] \cup [2/3, 1]$.
+If $0 \le s \le 2/3$, then take $x_1 = y_1 = s/2$.
+If $2/3 \le s \le 4/3$, then take $x_1 = s/2 - 1/3$ and $y_1 = s/2 + 1/3$.
+If $4/3 \le s \le 2$, then take $x_1 = y_1 = s/2$.
+For the inductive step, assume that there exist $x_n$ and $y_n$ in $C_n$
+such that $x_n + y_n = s$.
+Recall that $C_n$ can be written as a union of closed intervals,
+each with length $({1 \over 3})^n$.
+Let $a_n$ be the minimum of the interval containing $x_n$
+and $b_n$ be the minimum of the interval containing $y_n$.
+We can write $x_n = a_n + ({1 \over 3})^n p_n$
+and $y_n = b_n + ({1 \over 3})^n q_n$, where $0 \le p_n, q_n \le 1$.
+Let $z_n = p_n + q_n$.
+Notice that $0 \le z_n \le 2$.
+If $0 \le z_n \le 2/3$, then take $a_{n+1} = a_n$,
+$b_{n+1} = b_n$, and $p_{n+1} = q_{n+1} = {3 \over 2} z_n$.
+Clearly, $a_{n+1}$ and $b_{n+1}$ are the minima of intervals in $C_{n+1}$,
+$0 \le p_{n+1}, q_{n+1} \le 1$, and $x_{n+1} + y_{n+1} =
+a_{n+1} + ({1 \over 3})^{n+1} p_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} q_{n+1} =
+a_n + b_n + ({1 \over 3})^{n+1} (p_{n+1} + q_{n+1}) =
+a_n + b_n + ({1 \over 3})^{n+1} ({3 \over 2} z_n + {3 \over 2} z_n) =
+a_n + b_n + ({1 \over 3})^{n+1} 3 z_n =
+a_n + b_n + ({1 \over 3})^n z_n =
+a_n + b_n + ({1 \over 3})^n (p_n + q_n) =
+x_n + y_n = s$.
+If $2/3 \le z_n \le 4/3$, then take $a_{n+1} = a_n$,
+$b_{n+1} = b_n + 2({1 \over 3})^{n+1}$,
+and $p_{n+1} = q_{n+1} = {3 \over 2} z_n - 1$.
+Clearly, $a_{n+1}$ and $b_{n+1}$ are the minima of intervals in $C_{n+1}$,
+$0 \le p_{n+1}, q_{n+1} \le 1$, and $x_{n+1} + y_{n+1} =
+a_{n+1} + ({1 \over 3})^{n+1} p_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} q_{n+1} =
+a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (p_{n+1} + q_{n+1}) =
+a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (3 z_n - 2) =
+a_n + b_n + 2({1 \over 3})^{n+1} + ({1 \over 3})^{n+1} (3 z_n - 2) =
+a_n + b_n + ({1 \over 3})^n z_n =
+x_n + y_n = s$.
+If $4/3 \le z_n \le 2$, then take
+$a_{n+1} = a_n + 2({1 \over 3})^{n+1}$,
+$b_{n+1} = b_n + 2({1 \over 3})^{n+1}$,
+and $p_{n+1} = q_{n+1} = {3 \over 2} z_n - 2$.
+Clearly, $a_{n+1}$ and $b_{n+1}$ are the minima of intervals in $C_{n+1}$,
+$0 \le p_{n+1}, q_{n+1} \le 1$, and $x_{n+1} + y_{n+1} =
+a_{n+1} + ({1 \over 3})^{n+1} p_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} q_{n+1} =
+a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (p_{n+1} + q_{n+1}) =
+a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (3 z_n - 4) =
+a_n + 2({1 \over 3})^{n+1} + b_n + 2({1 \over 3})^{n+1} + ({1 \over 3})^{n+1} (3 z_n - 2) =
+a_n + b_n + ({1 \over 3})^n z_n =
+x_n + y_n = s$.
+Therefore, there are $x_{n+1}$ and $y_{n+1}$ in $C_{n+1}$
+such that $x_{n+1} + y_{n+1} = s$.
+\medskip
+\item{} b.
+
+Since $(x_n)$ is bounded, it has a subsequence
+$(x_{n_k})$ that converges to a real number $x$.
+Since $C_n$ is closed for each natural number $n$
+and $(x_{n_k})$ is eventually contained in $C_n$,
+$x$ is also contained in $C_n$ for all $n$
+and is consequently in $C$.
+By the same argument, $(y_{n_k})$ has a subsequence
+$(y_{n_{k_\ell}})$ that converges to some $y \in C$.
+Notice that $(x_{n_{k_\ell}})$ also converges to $x$.
+By the algebraic limit theorem, $(x_{n_{k_\ell}} + y_{n_{k_\ell}})$
+converges to $x + y$.
+Since $(x_{n_{k_\ell}} + y_{n_{k_\ell}})$ is the constant sequence
+$(s,s,\ldots)$, clearly $(x_{n_{k_\ell}} + y_{n_{k_\ell}})$
+converges to $s$.
+Therefore, $x + y = s$.
+\bigskip
+\item{3.3.8.} a.
+
+Define $\abs{K - L} = \{\abs{x - y} : x \in K, y \in L\}$.
+
+\proclaim Lemma 1. If $(a_n)$ converges to $a$,
+then $(\abs{a_n})$ converges to $\abs a$.
+
+If $a = 0$, then $\abs a = 0$ as well.
+Given $\epsilon > 0$, since $(a_n) \to 0$,
+there is a natural number $N$ such that
+$\abs{a_n - 0} = \abs{a_n} < \epsilon$ for all $n \ge N$.
+Notice that $\abs{\abs{a_n} - 0} = \abs{a_n - 0} = \abs{a_n} < \epsilon$
+for all $n \ge N$.
+
+If $a > 0$, then taking $\epsilon = a$, we have that eventually $a_n > 0$.
+Therefore, eventually $a_n = \abs{a_n}$,
+so $(\abs{a_n})$ converges to $a = \abs a$.
+
+If $a < 0$, then taking $\epsilon = a$, we have that eventually $a_n < 0$.
+Therefore, eventually $a_n = -\abs{a_n}$,
+so $(\abs{a_n})$ converges to $-a = \abs a$.
+\medskip
+\proclaim Lemma 2. If $K$ is compact,
+then $\abs K = \{\abs x : x \in K$ is compact.
+
+Let $(x_n) \subset \abs K$.
+By definition, there is a sequence $(a_n) \subset K$
+such that $(x_n) = (\abs{a_n})$.
+Since $K$ is compact, $(a_n)$ has a subsequence $(a_{n_k})$
+that converges to a point $a \in K$.
+By lemma 1, $(x_{n_k}) = (\abs{a_{n_k}})$ converges to $\abs a \in \abs K$,
+as desired.
+\medskip
+\proclaim Lemma 3. If $K$ and $L$ are compact,
+then $\abs{K - L} = \{\abs{x - y} : x \in K, y \in L\}$ is also compact.
+
+Notice that $-L = \{-y : y \in L\}$ is simply the reflection of $L$
+about the point $0$ and is therefore compact.
+By exercise (3.3.6.b), $K - L = K + (-L)$ is also compact.
+By lemma 2, since $K - L$ is compact, $\abs{K - L}$ is compact, as desired.
+\medskip
+By the argument in exercise (3.3.6.a), every compact set has a minimum.
+By lemma 3, $\abs{K - L}$ is compact, so it has a minimum, that is,
+$d = \inf \abs{K - L} \in \abs{K - L}$.
+Therefore, there exist $x_0 \in K$ and $y_0 \in L$
+such that $d = \abs{x_0 - y_0}$.
+Since $K$ and $L$ are disjoint, we have that $x_0 \ne y_0$,
+so $d = \abs{x_0 - y_0} > 0$.
+\medskip
+\item{} b.
+
+Let $K = \bigcup _{n=1} ^\infty [2n - 1/2, 2n]$
+and $L = \bigcup _{n=1} ^\infty [2n + 1/n, 2n + 1]$.
+
+We will first show that $K$ is closed.
+Let $x$ be a limit point of $K$.
+Then there is a sequence $(x_n) \subset K$ that converges to $x$.
+Since $(x_n)$ converges, by the Cauchy criterion,
+taking $\epsilon = 1/2$, we have that eventually
+$(x_n) \subset [2k - 1/2, 2k]$ for some natural number $k$
+(since the distances between the intervals are more than $1$).
+Therefore, $x$ is a limit point of the interval $[2k - 1/2, 2k]$,
+which is closed, so $x \in [2k - 1/2, 2k] \subset K$.
+By the same argument, $L$ is closed.
+
+Notice that $\abs{2n - (2n + 1/n)} = \abs{-1/n} = 1/n \in \abs{K - L}$
+for each natural number $n$.
+Therefore, since $d = \inf \abs{K - L}$,
+$0 \le d \le 1/n$ for each natural number $n$.
+Therefore, $d = 0$, as desired.
+\bigskip
+\item{3.3.9.}
+
+Since $K$ is bounded, we can take $a_0 = \inf K$ and $b_0 = \sup K$.
+By our assumption, we have that $I_0 \cap K = K$
+cannot be finitely covered.
+
+\proclaim Lemma. If $[a_n, b_n] \cap K$ cannot be finitely covered,
+then at least one of $[a_n, {1 \over 2}(a_n + b_n)] \cap K$ and
+$[{1 \over 2}(a_n + b_n), b_n] \cap K$ cannot be finitely covered.
+
+Suppose for contradiction that both sets can be finitely covered.
+Then there are $\lambda _1, \lambda _2, \ldots, \lambda _p$ such that
+$[a_n, {1 \over 2}(a_n + b_n)] \cap K \subset \bigcup _{k=1} ^p \lambda _k$
+and $\lambda _{p+1}, \lambda _{p+2}, \ldots, \lambda _q$ such that
+$[{1 \over 2}(a_n + b_n), b_n] \cap K \subset \bigcup _{k=p+1} ^q \lambda _k$.
+Notice that
+$[a_n, b_n] \cap K = ([a_n, {1 \over 2}(a_n + b_n)] \cap K) \cup
+([{1 \over 2}(a_n + b_n), b_n] \cap K) \subset \bigcup _{k=1} ^q \lambda _k$,
+so $[a_n, b_n] \cap K$ can be finitely covered,
+contradicting our assumption that it cannot be.
+
+Given $I_n = [a_n, b_n]$, we know by the lemma that
+at least one of $[a_n, {1 \over 2}(a_n + b_n)] \cap K$ and
+$[{1 \over 2}(a_n + b_n), b_n] \cap K$ cannot be finitely covered.
+Let $I_{n+1} = [a_{n+1}, b_{n+1}]$ be the interval
+whose intersection with $K$ cannot be finitely covered.
+Since $I_0$ has a finite length ($b_0 - a_0$)
+and $I_{n+1}$ has half the length of $I_n$,
+we have that the length of $I_n$ is $({1 \over 2})^n (b_0 - a_0)$.
+Notice that $I_{n+1} \subset I_n$ and that $\lim \abs{I_n} = 0$.
+\medskip
+\item{} b.
+
+Since $I_{n+1} \subset I_n$, we have that $I_{n+1} \cap K \subset I_n \cap K$.
+Since $I_n$ and $K$ are closed and bounded,
+we have that $I_n \cap K$ is also closed and bounded.
+Notice that $I_n \cap K$ must be nonempty,
+otherwise it could be finitely covered.
+Therefore, by the nested compact set property,
+$K \cap \bigcap _{n=1} ^\infty I_n = \bigcap _{n=1} ^\infty K \cap I_n$
+is nonempty.
+There conseqently exists a real number $x$
+such that $x \in K \cap \bigcap _{n=1} ^\infty I_n$, that is,
+$x \in K$ and $x \in I_n$ for every natural number $n$.
+\medskip
+\item{} c.
+
+Since $O _{\lambda _0}$ is open, there exists $\epsilon > 0$ such that
+$V _\epsilon (x) \subset O _{\lambda _0}$.
+Since $\lim \abs{I_n} = 0$, there is a natural number $N$ such that
+$\abs{I_N} < \epsilon$.
+Since $x \in I_N$, we have that
+$I_N \subset V _\epsilon (x) \subset O _{\lambda _0}$.
+This is a contradiction because $I_N$ cannot be finitely covered,
+but it is covered by a single member of $\Lambda$.
