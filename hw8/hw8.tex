@@ -1,231 +1,311 @@
+\def\rational{{\bf Q}}
+\def\irrational{{\bf I}}
+\def\real{{\bf R}}
 \def\abs#1{\vert#1\vert}
 \centerline{Steve Hsu\hfill homework 8}
-\item{3.3.5.} a. true
+\item{3.4.5.}
 
-Let $\{K _\lambda : \lambda \in \Lambda\}$
-be an arbitrary collection of compact sets.
-Since $K _\lambda$ is closed for all $\lambda \in \Lambda$,
-$\bigcap _{\lambda \in \Lambda} K _\lambda$ is also closed.
-Let $\lambda _0$ be an arbitrary element of $\Lambda$.
-Since $K _{\lambda _0}$ is bounded,
-$\bigcap _{\lambda \in \Lambda} K _\lambda$ is also bounded.
-Therefore, $\bigcap _{\lambda \in \Lambda} K _\lambda$
-is compact, as desired.
-\medskip
-\item{} b. false
+\proclaim Lemma 1. If $X \subset Y$, then $\overline X \subset \overline Y$.
 
-Let $K_n = [1/n, n]$ for each natural number $n$.
-Clearly, $K_n$ is compact for each $n$,
-but $\bigcup _{n = 1} ^\infty K_n = (0, +\infty)$,
-which is not compact.
-\medskip
-\item{} c. false
-
-Let $A = (0,1)$ and $K = [0,1]$.
-Clearly, $K$ is compact, but $A \cap K = (0,1)$,
-which is not compact.
-\medskip
-\item{} d. false
-
-Let $F_n = [n, +\infty)$ for each natural number $n$.
-Then $\bigcap _{n = 1} ^\infty F_n = \emptyset$.
-\bigskip
-\item{3.3.7.} a.
-
-We will show by induction on $n$ that
-there exist $x_n$ and $y_n$ in $C_n$ such that $x_n + y_n = s$.
-For the base case, recall that $C_1 = [0, 1/3] \cup [2/3, 1]$.
-If $0 \le s \le 2/3$, then take $x_1 = y_1 = s/2$.
-If $2/3 \le s \le 4/3$, then take $x_1 = s/2 - 1/3$ and $y_1 = s/2 + 1/3$.
-If $4/3 \le s \le 2$, then take $x_1 = y_1 = s/2$.
-For the inductive step, assume that there exist $x_n$ and $y_n$ in $C_n$
-such that $x_n + y_n = s$.
-Recall that $C_n$ can be written as a union of closed intervals,
-each with length $({1 \over 3})^n$.
-Let $a_n$ be the minimum of the interval containing $x_n$
-and $b_n$ be the minimum of the interval containing $y_n$.
-We can write $x_n = a_n + ({1 \over 3})^n p_n$
-and $y_n = b_n + ({1 \over 3})^n q_n$, where $0 \le p_n, q_n \le 1$.
-Let $z_n = p_n + q_n$.
-Notice that $0 \le z_n \le 2$.
-If $0 \le z_n \le 2/3$, then take $a_{n+1} = a_n$,
-$b_{n+1} = b_n$, and $p_{n+1} = q_{n+1} = {3 \over 2} z_n$.
-Clearly, $a_{n+1}$ and $b_{n+1}$ are the minima of intervals in $C_{n+1}$,
-$0 \le p_{n+1}, q_{n+1} \le 1$, and $x_{n+1} + y_{n+1} =
-a_{n+1} + ({1 \over 3})^{n+1} p_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} q_{n+1} =
-a_n + b_n + ({1 \over 3})^{n+1} (p_{n+1} + q_{n+1}) =
-a_n + b_n + ({1 \over 3})^{n+1} ({3 \over 2} z_n + {3 \over 2} z_n) =
-a_n + b_n + ({1 \over 3})^{n+1} 3 z_n =
-a_n + b_n + ({1 \over 3})^n z_n =
-a_n + b_n + ({1 \over 3})^n (p_n + q_n) =
-x_n + y_n = s$.
-If $2/3 \le z_n \le 4/3$, then take $a_{n+1} = a_n$,
-$b_{n+1} = b_n + 2({1 \over 3})^{n+1}$,
-and $p_{n+1} = q_{n+1} = {3 \over 2} z_n - 1$.
-Clearly, $a_{n+1}$ and $b_{n+1}$ are the minima of intervals in $C_{n+1}$,
-$0 \le p_{n+1}, q_{n+1} \le 1$, and $x_{n+1} + y_{n+1} =
-a_{n+1} + ({1 \over 3})^{n+1} p_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} q_{n+1} =
-a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (p_{n+1} + q_{n+1}) =
-a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (3 z_n - 2) =
-a_n + b_n + 2({1 \over 3})^{n+1} + ({1 \over 3})^{n+1} (3 z_n - 2) =
-a_n + b_n + ({1 \over 3})^n z_n =
-x_n + y_n = s$.
-If $4/3 \le z_n \le 2$, then take
-$a_{n+1} = a_n + 2({1 \over 3})^{n+1}$,
-$b_{n+1} = b_n + 2({1 \over 3})^{n+1}$,
-and $p_{n+1} = q_{n+1} = {3 \over 2} z_n - 2$.
-Clearly, $a_{n+1}$ and $b_{n+1}$ are the minima of intervals in $C_{n+1}$,
-$0 \le p_{n+1}, q_{n+1} \le 1$, and $x_{n+1} + y_{n+1} =
-a_{n+1} + ({1 \over 3})^{n+1} p_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} q_{n+1} =
-a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (p_{n+1} + q_{n+1}) =
-a_{n+1} + b_{n+1} + ({1 \over 3})^{n+1} (3 z_n - 4) =
-a_n + 2({1 \over 3})^{n+1} + b_n + 2({1 \over 3})^{n+1} + ({1 \over 3})^{n+1} (3 z_n - 2) =
-a_n + b_n + ({1 \over 3})^n z_n =
-x_n + y_n = s$.
-Therefore, there are $x_{n+1}$ and $y_{n+1}$ in $C_{n+1}$
-such that $x_{n+1} + y_{n+1} = s$.
-\medskip
-\item{} b.
-
-Since $(x_n)$ is bounded, it has a subsequence
-$(x_{n_k})$ that converges to a real number $x$.
-Since $C_n$ is closed for each natural number $n$
-and $(x_{n_k})$ is eventually contained in $C_n$,
-$x$ is also contained in $C_n$ for all $n$
-and is consequently in $C$.
-By the same argument, $(y_{n_k})$ has a subsequence
-$(y_{n_{k_\ell}})$ that converges to some $y \in C$.
-Notice that $(x_{n_{k_\ell}})$ also converges to $x$.
-By the algebraic limit theorem, $(x_{n_{k_\ell}} + y_{n_{k_\ell}})$
-converges to $x + y$.
-Since $(x_{n_{k_\ell}} + y_{n_{k_\ell}})$ is the constant sequence
-$(s,s,\ldots)$, clearly $(x_{n_{k_\ell}} + y_{n_{k_\ell}})$
-converges to $s$.
-Therefore, $x + y = s$.
-\bigskip
-\item{3.3.8.} a.
-
-Define $\abs{K - L} = \{\abs{x - y} : x \in K, y \in L\}$.
-
-\proclaim Lemma 1. If $(a_n)$ converges to $a$,
-then $(\abs{a_n})$ converges to $\abs a$.
-
-If $a = 0$, then $\abs a = 0$ as well.
-Given $\epsilon > 0$, since $(a_n) \to 0$,
-there is a natural number $N$ such that
-$\abs{a_n - 0} = \abs{a_n} < \epsilon$ for all $n \ge N$.
-Notice that $\abs{\abs{a_n} - 0} = \abs{a_n - 0} = \abs{a_n} < \epsilon$
-for all $n \ge N$.
-
-If $a > 0$, then taking $\epsilon = a$, we have that eventually $a_n > 0$.
-Therefore, eventually $a_n = \abs{a_n}$,
-so $(\abs{a_n})$ converges to $a = \abs a$.
-
-If $a < 0$, then taking $\epsilon = a$, we have that eventually $a_n < 0$.
-Therefore, eventually $a_n = -\abs{a_n}$,
-so $(\abs{a_n})$ converges to $-a = \abs a$.
-\medskip
-\proclaim Lemma 2. If $K$ is compact,
-then $\abs K = \{\abs x : x \in K$ is compact.
-
-Let $(x_n) \subset \abs K$.
-By definition, there is a sequence $(a_n) \subset K$
-such that $(x_n) = (\abs{a_n})$.
-Since $K$ is compact, $(a_n)$ has a subsequence $(a_{n_k})$
-that converges to a point $a \in K$.
-By lemma 1, $(x_{n_k}) = (\abs{a_{n_k}})$ converges to $\abs a \in \abs K$,
+We will first show that $X \prime \subset Y \prime$,
+where $X \prime$ and $Y \prime$ are the sets of limit points
+of $X$ and $Y$, respectively.
+Let $a$ be a limit point of $X$.
+Then there is a sequence $(a_n) \subset X \setminus \{a\}$
+that converges to $a$.
+Since $X \subset Y$, we have that $(a_n) \subset Y \setminus \{a\}$
+and $(a_n)$ converges to $a$, so $a$ is a limit point of $Y$.
+Since $X \subset Y$ and $X \prime \subset Y \prime$,
+clearly $\overline X = X \cup X \prime \subset Y \cup Y \prime = \overline Y$,
 as desired.
-\medskip
-\proclaim Lemma 3. If $K$ and $L$ are compact,
-then $\abs{K - L} = \{\abs{x - y} : x \in K, y \in L\}$ is also compact.
 
-Notice that $-L = \{-y : y \in L\}$ is simply the reflection of $L$
-about the point $0$ and is therefore compact.
-By exercise (3.3.6.b), $K - L = K + (-L)$ is also compact.
-By lemma 2, since $K - L$ is compact, $\abs{K - L}$ is compact, as desired.
-\medskip
-By the argument in exercise (3.3.6.a), every compact set has a minimum.
-By lemma 3, $\abs{K - L}$ is compact, so it has a minimum, that is,
-$d = \inf \abs{K - L} \in \abs{K - L}$.
-Therefore, there exist $x_0 \in K$ and $y_0 \in L$
-such that $d = \abs{x_0 - y_0}$.
-Since $K$ and $L$ are disjoint, we have that $x_0 \ne y_0$,
-so $d = \abs{x_0 - y_0} > 0$.
-\medskip
-\item{} b.
+\proclaim Lemma 2. If $X \subset Y$ and the sets $Y$ and $Z$ are separated,
+then $X$ and $Z$ are separated.
 
-Let $K = \bigcup _{n=1} ^\infty [2n - 1/2, 2n]$
-and $L = \bigcup _{n=1} ^\infty [2n + 1/n, 2n + 1]$.
+Since $Y$ and $Z$ are separated, we have that $\overline Y \cap Z = \emptyset$
+and $Y \cap \overline Z = \emptyset$.
+Since $X \subset Y$, we have by lemma 1 that
+$\overline X \subset \overline Y$.
+Then clearly, $\overline X \cap Z \subset \overline Y \cap Z = \emptyset$,
+so $\overline X \cap Z = \emptyset$.
+In addition, $X \cap \overline Z \subset Y \cap \overline Z = \emptyset$,
+so $X \cap \overline Z = \emptyset$.
+Therefore, $X$ and $Z$ are separated, as desired.
 
-We will first show that $K$ is closed.
-Let $x$ be a limit point of $K$.
-Then there is a sequence $(x_n) \subset K$ that converges to $x$.
-Since $(x_n)$ converges, by the Cauchy criterion,
-taking $\epsilon = 1/2$, we have that eventually
-$(x_n) \subset [2k - 1/2, 2k]$ for some natural number $k$
-(since the distances between the intervals are more than $1$).
-Therefore, $x$ is a limit point of the interval $[2k - 1/2, 2k]$,
-which is closed, so $x \in [2k - 1/2, 2k] \subset K$.
-By the same argument, $L$ is closed.
+\proclaim Lemma 3. If $X$ and $Y$ are open and disjoint,
+then they are separated.
 
-Notice that $\abs{2n - (2n + 1/n)} = \abs{-1/n} = 1/n \in \abs{K - L}$
-for each natural number $n$.
-Therefore, since $d = \inf \abs{K - L}$,
-$0 \le d \le 1/n$ for each natural number $n$.
-Therefore, $d = 0$, as desired.
+The statement is equivalent to saying that for all open sets $X$ and $Y$,
+if $X$ and $Y$ are disjoint, then they are separated.
+We will prove this statement by contraposition, that is, we will show that
+if $X$ and $Y$ are not separated, then they are not disjoint.
+Assume without loss of generality that there is a point $a \in \overline X$
+such that $a \in Y$.
+
+We have two cases.
+If $a \in X$, then $a \in X \cap Y$ and $X$ and $Y$ are not disjoint.
+If $a$ is a limit point of $X$, take $\epsilon > 0$ such that
+$V _\epsilon (a) \subset Y$.
+Since $a$ is a limit point of $X$, there is a point $b \in X$
+such that $b \in V _\epsilon (a)$ and $b \in X$.
+Since $b \in X$ and $b \in V _\epsilon (a) \subset Y$,
+$b \in X \cap Y$ and $X$ and $Y$ are not disjoint.
+\smallskip
+Since $U$ and $V$ are open disjoint sets, by lemma 3, they are separated.
+Since $A \subset U$ and $U$ and $V$ are separated, by lemma 2,
+we have that $A$ and $V$ are separated.
+Since $B \subset V$ and $A$ and $V$ are separated, by lemma 2,
+we have that $A$ and $B$ are separated, as desired.
 \bigskip
-\item{3.3.9.}
+\item{3.4.7.} a.
 
-Since $K$ is bounded, we can take $a_0 = \inf K$ and $b_0 = \sup K$.
-By our assumption, we have that $I_0 \cap K = K$
-cannot be finitely covered.
+Let $x < y$ be rational numbers.
+Take $r = x + {1 \over \sqrt 2} (y - x)$.
+Notice that $r$ is irrational and that $x < r < y$.
+The sets $A = (-\infty, r) \cap Q$ and $B = (r, +\infty) \cap Q$
+are separated sets, with $x \in A$, $y \in B$, and $A \cup B = \rational$.
+\medskip
+\item{} b. yes
 
-\proclaim Lemma. If $[a_n, b_n] \cap K$ cannot be finitely covered,
-then at least one of $[a_n, {1 \over 2}(a_n + b_n)] \cap K$ and
-$[{1 \over 2}(a_n + b_n), b_n] \cap K$ cannot be finitely covered.
+Let $x < y$ be irrational numbers.
+Since the rational numbers are dense in the real numbers,
+there is a rational number $r$ such that $x < r < y$.
+The sets $A = (-\infty, r) \cap \irrational$ and
+$B = (r, +\infty) \cap \irrational$ are separated sets,
+with $x \in A$, $y \in B$, and $A \cup B = \real \cap \irrational$.
+\bigskip
+\item{3.4.8.} a.
 
-Suppose for contradiction that both sets can be finitely covered.
-Then there are $\lambda _1, \lambda _2, \ldots, \lambda _p$ such that
-$[a_n, {1 \over 2}(a_n + b_n)] \cap K \subset \bigcup _{k=1} ^p \lambda _k$
-and $\lambda _{p+1}, \lambda _{p+2}, \ldots, \lambda _q$ such that
-$[{1 \over 2}(a_n + b_n), b_n] \cap K \subset \bigcup _{k=p+1} ^q \lambda _k$.
-Notice that
-$[a_n, b_n] \cap K = ([a_n, {1 \over 2}(a_n + b_n)] \cap K) \cup
-([{1 \over 2}(a_n + b_n), b_n] \cap K) \subset \bigcup _{k=1} ^q \lambda _k$,
-so $[a_n, b_n] \cap K$ can be finitely covered,
-contradicting our assumption that it cannot be.
-
-Given $I_n = [a_n, b_n]$, we know by the lemma that
-at least one of $[a_n, {1 \over 2}(a_n + b_n)] \cap K$ and
-$[{1 \over 2}(a_n + b_n), b_n] \cap K$ cannot be finitely covered.
-Let $I_{n+1} = [a_{n+1}, b_{n+1}]$ be the interval
-whose intersection with $K$ cannot be finitely covered.
-Since $I_0$ has a finite length ($b_0 - a_0$)
-and $I_{n+1}$ has half the length of $I_n$,
-we have that the length of $I_n$ is $({1 \over 2})^n (b_0 - a_0)$.
-Notice that $I_{n+1} \subset I_n$ and that $\lim \abs{I_n} = 0$.
+Take $N$ large enough that $({1 \over 3})^n < \epsilon$.
+Such an $N$ exists because $\lim ({1 \over 3^n}) = 0$.
+Since the length of each interval in $C_N$ is smaller than $\epsilon$,
+$x$ and $y$ cannot be in the same interval,
+otherwise $y - x$ would be less than $\epsilon$.
 \medskip
 \item{} b.
 
-Since $I_{n+1} \subset I_n$, we have that $I_{n+1} \cap K \subset I_n \cap K$.
-Since $I_n$ and $K$ are closed and bounded,
-we have that $I_n \cap K$ is also closed and bounded.
-Notice that $I_n \cap K$ must be nonempty,
-otherwise it could be finitely covered.
-Therefore, by the nested compact set property,
-$K \cap \bigcap _{n=1} ^\infty I_n = \bigcap _{n=1} ^\infty K \cap I_n$
-is nonempty.
-There conseqently exists a real number $x$
-such that $x \in K \cap \bigcap _{n=1} ^\infty I_n$, that is,
-$x \in K$ and $x \in I_n$ for every natural number $n$.
+Given $x, y \in C$ such that $x < y$.
+Consider $N$ from part (a) such that $x$ and $y$
+cannot belong to the same interval in $C_N$.
+Since the intervals of $C_N$ are separated,
+there is a real number $r$ such that $x < r < y$ and $r \notin C_N$.
+Clearly, $r \notin C$,
+so $A = (-\infty, r) \cap C$ and $B = (r, +\infty) \cap C$
+are separated sets whose union is $C$ satisfying $x \in A$ and $y \in B$.
+\bigskip
+\item{3.4.9.} a.
+
+For each natural number $n$, notice that $V _{\epsilon _n} (r_n)$ is open.
+Since a union of open sets is open, we have that
+$O = \bigcup _{n=1} ^\infty V _{\epsilon _n} (r_n)$ is open.
+Therefore, $F = O^c$ is closed.
+
+Since $O$ is a union of open intervals,
+we can bound the length of $O$ with
+$\abs O \le \sum _{n=1} ^\infty \abs{V _{\epsilon _n} (r_n)} =
+\sum _{n=1} ^\infty ({1 \over 2})^n$, which converges absolutely to $1$.
+Since $O$ has a finite length, $F = O^c$ must be nonempty.
+
+Since every rational number $x$ is equal to $r_n$ for some natural number $n$,
+we have that $x = r_n \in V _{\epsilon _n} (r_n) \subset O = F^c$,
+so $x \notin F$.
+Therefore, $F$ contains no rational numbers.
+\medskip\goodbreak
+\item{} b.
+
+We will show by contradiction that $F$ contains no open intervals.
+Suppose for contradiction that $F$ contains an open interval.
+Let $x$ and $y$ be points in this interval such that $x < y$.
+Since the rational numbers are dense in the real numbers,
+we have that there is a rational number $r$ such that $x < r < y$.
+By the definition of intervals, since $x$ and $y$ are in the interval,
+$r$ is also in the interval.
+Since $F$ contains no rational numbers, we have that $r \notin F$.
+This is a contradiction since $r$ is in an interval contained in $F$.
+
+\proclaim Lemma. If $X \subset Y$ and $Y$ is totally disconnected,
+then $X$ is totally disconnected.
+
+Let $a, b \in X$ be such that $a < b$.
+Since $X \subset Y$, we have that $a, b \in Y$.
+Since $Y$ is totally disconnected, there are sets $A$ and $B$
+such that $a \in A$, $a \in B$, $A \cup B = Y$, and $A$ and $B$ are separated.
+Take $C = A \cap X$ and $D = B \cap X$.
+Clearly, $a \in A \cap X = C$ and $b \in B \cap X = D$.
+Since $X \subset Y$, we have that $C \cup D = (A \cap X) \cup (B \cap X) =
+(A \cup B) \cap X = Y \cap X = X$.
+By lemma 2 from exercise (3.4.5), since $A$ and $B$ are separated
+and $C \subset A$, $C$ and $B$ are separated.
+By another application of lemma 2, since $C$ and $B$ are separated
+and $D \subset B$, we have that $C$ and $D$ are separated, as desired.
+
+Since $F \subset \irrational$ and
+the irrational numbers are totally disconnected,
+by the lemma, we have that $F$ is totally disconnected.
 \medskip
 \item{} c.
 
-Since $O _{\lambda _0}$ is open, there exists $\epsilon > 0$ such that
-$V _\epsilon (x) \subset O _{\lambda _0}$.
-Since $\lim \abs{I_n} = 0$, there is a natural number $N$ such that
-$\abs{I_N} < \epsilon$.
-Since $x \in I_N$, we have that
-$I_N \subset V _\epsilon (x) \subset O _{\lambda _0}$.
-This is a contradiction because $I_N$ cannot be finitely covered,
-but it is covered by a single member of $\Lambda$.
+It is not possible to know that $F$ is perfect.
+For example, take $(r_n)$ such that
+if $n \equiv 0 \pmod 3$, then
+$\sqrt 2 - ({1 \over 2})^n - ({1 \over 2})^{n+4} < r_n <
+\sqrt 2 - ({1 \over 2})^n$;
+if $n \equiv 1 \pmod 3$, then
+$\sqrt 2 + ({1 \over 2})^n < r_n <
+\sqrt 2 + ({1 \over 2})^n + ({1 \over 2})^{n+4}$,
+and if $n \equiv 2 \pmod 3$, then $\abs{r_n - \sqrt 2} > 1/2^n$.
+Notice that $\sqrt 2$ is both an isolated point of $F$ and a member of $F$.
+
+We can modify the selection of $(\epsilon _n)$
+to make $F$ perfect.
+These $(\epsilon _n)$ will have several properties.
+First, $\epsilon _n$ will be irrational for all natural numbers $n$.
+Second, $\epsilon _n < 1 / 2^n$ for all $n$.
+Third, $O_k^c = (\bigcup _{n=1} ^k V _{\epsilon _n} (r_n))^c$
+can be written as a union of closed intervals with positive
+or infinite length for all natural numbers $k$.
+
+We give an inductive construction of $(\epsilon _n)$
+that satisfies these properties.
+Take $\epsilon _1 = \sqrt 2 / 3$.
+Clearly, $\epsilon _1$ is irrational and is less than $1/2$.
+Notice that $(V _{\epsilon _1} (r_1))^c =
+(-\infty, r_1 - {\sqrt 2 \over 3}] \cup [r_1 + {\sqrt 2 \over 3}, +\infty)$.
+With $\epsilon _1, \epsilon _2, \ldots, \epsilon _k$ fixed,
+notice that $O_k = \bigcup _{n=1} ^k V _{\epsilon _n} (r_n)$
+is a union of open intervals, so $O_k$ is open.
+Since $\epsilon _n$ is irrational for $n \le k$,
+we have that $r_n$ is not an endpoint of any of these intervals.
+
+We therefore have two cases.
+If $r_{k+1} \in O_k = \bigcup _{n=1} ^k V _{\epsilon n} (r_n)$,
+then since $O_k$ is open, there exists $\delta _{k+1} > 0$
+such that $V _{\delta _{k+1}} (r_{k+1}) \subset O_k$.
+Take $\epsilon _{k+1} < \delta _{k+1}$
+such that $\epsilon _{k+1}$ is irrational and less than $1 / 2^n$.
+If $r_{k+1} \notin O_k$, since $O_k^c$ can be written as a union of closed
+intervals with irrational endpoints, we have that $r_{k+1}$
+is in the interior of $O_k^c$.
+In this case, there exists $\delta _{k+1} > 0$
+such that $V _{\delta _{k+1}} (r_{k+1}) \subset O_k^c$.
+Take $\epsilon _{k+1} < {1 \over 2} \delta _{k+1}$
+such that $\epsilon _{k+1}$ is irrational and less than $1 / 2^n$.
+
+Notice that in the first case, $O_{k+1} = O_k$,
+so we preserve the third property by the induction hypothesis.
+In the second case, we simply split the interval of $O_k^c$
+containing $r_{k+1}$.
+Let this interval be $[a,b]$.
+We know that $a \le r_{k+1} - \delta _{k+1} < r_{k+1} - \epsilon _{k+1} <
+r_{k+1} < r_{k+1} + \epsilon _{k+1} < r_{k+1} + \delta _{k+1} \le b$.
+Therefore, we split $[a,b]$ into $[a, r_{k+1} - \epsilon _{k+1}]$ and
+$[r_{k+1} + \epsilon _{k+1}, b]$.
+By the inequalities above, these intervals have positive length.
+By a similar argument, we split an unbounded interval into another
+unbounded interval and an interval with positive length.
+
+We will now show that
+if $x$ is an endpoint of an interval in $O_k^c$, then $x \in F$.
+Let $x$ be an endpoint of an interval in $O_k^c$.
+For any $r_n$ with $n > k$, we have two cases.
+
+If $r_n$ is in the same interval as $x$,
+since $r_n$ is rational and $x$ is irrational (by the definiton of $F$),
+we have that $r_n \ne x$.
+By our construction, we have that $\delta _n$ is small enough that
+$V _{\delta _n} (r_n)$ is disjoint with $O_k$.
+By lemma 3 from exercise (3.4.5),
+since $V _{\delta _n} (r_n)$ and $O_k$ are open and disjoint,
+they are separated.
+Therefore, $x$, which is a limit point of $O_k$,
+is not in $V _{\delta _n} (r_n)$.
+Since $V _{\epsilon _n} (r_n) \subset V _{\delta _n} (r_n)$,
+we have that $x \notin V _{\epsilon _n} (r_n)$.
+
+If $r_n$ is not in the same interval as $x$,
+then since its $\epsilon$-neighborhood cannot cross the boundaries
+of intervals, $V _{\epsilon _n} (r_n)$ cannot include $x$.
+Since $x \notin V _{\epsilon _n} (r_n)$ for all $n > k$
+and $x \notin O_k$, we have that $x \notin O$, so $x \in F$, as desired.
+
+By the same proof as in part (a),
+$F$ constructed in this way is closed and nonempty.
+We will now show that $F$ is perfect, that is,
+we will show that every point $x \in F$
+is a limit point of $F$.
+For each natural number $n$,
+take rational numbers $s$ and $t$ such that
+$x - 1 < s < x$ and $x < t < x + 1$.
+Since $\{r_1, \ldots\}$ is an enumeration of the rational numbers,
+we have that $s = r_a$ and $t = r_b$ for some natural numbers $a$ and $b$.
+Take $k = \max \{a, b\}$.
+Since $x \in F = O^c = (\bigcup _{n=1} ^\infty V _{\epsilon _n} (r_n))^c =
+\bigcap _{n=1} ^\infty (V _{\epsilon _n} (r_n))^c \subset
+\bigcap _{n=1} ^k (V _{\epsilon _n} (r_n))^c =
+(\bigcup _{n=1} ^k V _{\epsilon _n} (r_n))^c = O_k^c$,
+by the properties established above,
+$x$ is in a closed interval with positive length contained in $O_k^c$.
+By the claim above both endpoints of this interval are in $F$
+and since the interval has positive length, at least one of these endpoints
+is not $x$.
+Take $x_n$ to be this endpoint.
+Clearly $(x_n) \subset F$ converges to $x$.
+Therefore, $x$ is a limit point of $F$, as desired.
+\bigskip
+\item{4.2.1.} c.
+
+By the sequential criterion for function limits, it suffices to show that
+for all sequences $(x_n) \subset A$ that converge to $c$,
+$(f(x_n) g(x_n))$ converges to $LM$.
+Let $(x_n) \subset A$ be a sequence that converges to $c$.
+Since $\lim _{x \to c} f(x) = L$,
+by the sequential criterion for functional limits,
+we have that $(f(x_n))$ converges to $L$.
+By the same argument, $(g(x_n))$ converges to $M$.
+By the algebraic limit theorem for sequences, we have that
+$(f(x_n) g(x_n))$ converges to $LM$, as desired.
+\medskip
+Given $\epsilon > 0$, take $\delta _1$ such that
+for all $x$ such that $\abs{x - c} < \delta _1$,
+$\abs{f(x) - L} < \epsilon / (2 \abs M)$,
+take $\delta _2$ such that
+$\abs{f(x) - L} < 1$, and
+take $\delta _3$ such that
+$\abs{g(x) - M} < \epsilon / (2 \abs L + 2)$.
+Let $\delta = \min \{\delta _1, \delta _2, \delta _3\}$.
+Notice that if $\abs{x - c} < \delta$, then
+$\abs{f(x) g(x) - LM} = \abs{f(x) g(x) - f(x) M + f(x) M - LM} \le
+\abs{f(x)} \abs{g(x) - M} + \abs M \abs{f(x) - L} <
+(\abs L + 1) \epsilon / (2 \abs L + 2) + \abs M \epsilon / (2 \abs M) =
+\epsilon / 2 + \epsilon / 2 = \epsilon$, as desired.
+\bigskip
+\item{4.2.5.} a.
+
+Given $\epsilon > 0$, take $\delta = \epsilon / 3$.
+If $\abs{x - 2} < \epsilon / 3$, then
+$\abs{3x + 4 - 10} = \abs{3x - 6} = 3 \abs{x - 2} <
+3 (\epsilon / 3) = \epsilon$, as desired.
+\medskip
+\item{} b.
+
+Given $\epsilon < 0$, take $\delta = \min \{1, \epsilon\}$.
+If $\abs{x - 0} = \abs x < \delta$, then
+$\abs{x^3 - 0} = \abs{x^3} = \abs x \abs x \abs x < (1) (1) \abs x = \abs x <
+\delta \le \epsilon$, as desired.
+\medskip
+\item{} c.
+
+Given $\epsilon > 0$, take $\delta = \min \{1, \epsilon / 6\}$.
+Notice that if $\abs{x - 2} < 1$, then $x < 3$ and $x + 3 < 6$.
+If $\abs{x - 2} < \delta$, then
+$\abs{x^2 + x - 1 - 5} = \abs{x^2 + x - 6} = \abs{(x + 3)(x - 2)} =
+\abs{x + 3} \abs{x - 2} < 6 (\epsilon / 6) = \epsilon$, as desired.
+\medskip
+\item{} d.
+
+Given $\epsilon > 0$, take $\delta = \min \{1, 2 \epsilon\}$.
+Notice that if $\abs{x - 3} < 1$, then $x > 2$ and $1/x < 1/2$.
+If $\abs{x - 3} < \delta$, then
+$\abs{{1 \over x} - {1 \over 3}} = \abs{(3 - x) / (3x)} =
+\abs{1/3x} \abs{3 - x} < (1/2) (2 \epsilon) = \epsilon$, as desired.
+\bye
