@@ -235,7 +235,7 @@ we will show that every point $x \in F$
 is a limit point of $F$.
 For each natural number $n$,
 take rational numbers $s$ and $t$ such that
-$x - 1 < s < x$ and $x < t < x + 1$.
+$x - 1/n < s < x$ and $x < t < x + 1/n$.
 Since $\{r_1, \ldots\}$ is an enumeration of the rational numbers,
 we have that $s = r_a$ and $t = r_b$ for some natural numbers $a$ and $b$.
 Take $k = \max \{a, b\}$.
@@ -245,6 +245,8 @@ Since $x \in F = O^c = (\bigcup _{n=1} ^\infty V _{\epsilon _n} (r_n))^c =
 (\bigcup _{n=1} ^k V _{\epsilon _n} (r_n))^c = O_k^c$,
 by the properties established above,
 $x$ is in a closed interval with positive length contained in $O_k^c$.
+Notice that $s$ and $t$ are not in this interval,
+so the interval must be short enough not to contain them.
 By the claim above both endpoints of this interval are in $F$
 and since the interval has positive length, at least one of these endpoints
 is not $x$.
