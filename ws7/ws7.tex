@@ -1,0 +1,66 @@
+\def\natural{{\bf N}}
+\def\Card{\hbox{Card}}
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill workshop 7}
+\proclaim Lemma. If $(a_n) \to a$ is such that
+$a_n < a$ for all natural numbers $n$,
+then $(a_n)$ has an nondecreasing rearrangement $(a_{f(n)})$.
+Similarly, if $a_n > a$ for all $n$,
+then $(a_n)$ has a nonincreasing rearrangement $(a_{f(n)})$.
+
+We want to find a bijection $f : \natural \to \natural$
+such that for all natural numbers $x$ and $y$,
+if $a_x < a_y$, then $f(x) < f(y)$.
+Given $x$, since $(a_n)$ converges to $a$,
+we have that eventually $\abs{a_n - a} < \abs{a_x - a}$.
+Since $a_n < a$ for all $n$, the inequality tells us that
+eventually $a - a_n < a - a_x$, that is, eventually $a_n > a_x$.
+Therefore, we have that there are finitely many $n$
+such that $a_n \le a_x$.
+We want $f$ such that $\Card \{n \in \natural : a_n < a_x\} <
+f^{-1}(x) \le \Card \{n \in \natural : a_n \le a_x\}$.
+For each natural number $x$, we know that
+there are finitely many natural numbers $n$ such that $a_n = a_x$.
+Let these be $n_1, n_2, \ldots, n_k$.
+Let $f^{-1}(n_\ell) = \Card \{n \in \natural : a_n < a_x\} + \ell$
+for $\ell \le k$.
+Clearly, this is a bijection satisfying the properties above.
+
+By a similar argument, if $a_n > a$ for all $n$,
+there is a nonincreasing rearrangement of $(a_n)$.
+\bigskip
+We want to show that $\lim _{x \to c -} f(x)$ exists.
+By the sequential criterion for functional limits,
+it suffices to show that there exists $L$ such that
+for all sequences $(x_n)$ that converge to $c$ from below,
+$(f(x_n))$ converges to $L$.
+By the lemma, there is a rearrangement $(x_{g(n)})$ of $(x_n)$
+that is nondecreasing.
+Since $f$ is nondecreasing, $(f(x_{g(n)}))$ is also nondecreasing
+and is bounded above by $f(c)$.
+Therefore, by the monotone convergence theorem,
+$f(x_{g(n)})$ converges.
+By problem (5) from midterm 1,
+since $f(x_n)$ is a rearrangement of $f(x_{g(n)})$,
+$\lim f(x_n)$ exists and is equal to $\lim f(x_{g(n)})$.
+
+We want to show that if $(x_n)$ and $(y_n)$ both converge to $c$ from below,
+then $\lim f(x_n) = \lim f(y_n)$.
+Consider the sequence $(a_n) = (x_1, y_1, x_2, y_2, \ldots)$.
+Clearly $(a_n)$ converges to $c$.
+By the lemma, $(a_n)$ has a nondecreasing rearrangement $(a_{h(n)})$
+that also converges to $c$.
+By the argument above, $(f(a_{h(n)}))$ converges.
+Let $L = \lim f(a_{h(n)})$.
+By the argument above, $\lim f(a_n) = L$.
+Since $(f(x_n))$ and $(f(y_n))$ are subsequences of $f(a_n)$,
+we have that $\lim f(x_n) = \lim f(y_n) = L$.
+Therefore, there is a real number $L$ such that
+for all sequences $(x_n)$ that converge to $c$ from below,
+$(f(x_n))$ converges to $L$.
+Notice that since $f(x_n) \le f(c)$ for all $x_n < c$,
+we have that $L = \lim f(x_n) \le f(c)$ by the order limit theorem.
+
+By the same argument, $\lim _{x \to c +} f(x)$ exists
+and is at least $f(c)$.
+\bye

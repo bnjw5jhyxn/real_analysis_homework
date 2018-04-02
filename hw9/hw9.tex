@@ -1,0 +1,66 @@
+\def\abs#1{\vert#1\vert}
+\def\real{{\bf R}}
+\centerline{Steve Hsu\hfill homework 9}
+\item{4.2.9.} a.
+
+Given $M > 0$, take $\delta = 1 / \sqrt M$.
+If $\abs{x - 0} = \abs x < \delta$,
+then $1 / x^2 = 1 / \abs x^2 > 1 / (1 / \sqrt M)^2 = \sqrt M^2 = M$,
+as desired.
+\medskip
+\item{} b.
+
+Let $f : A \to \real$ be such that
+for all $x \in R$, $(x, +\infty) \cap A$ is nonempty.
+We say that $\lim _{x \to +\infty} f(x) = L$ if
+for every $\epsilon > 0$, there exists $M > 0$ such that
+whenever $x > M$, it follows that $\abs{f(x) - L} < \epsilon$.
+
+Given $\epsilon > 0$, take $M = 1 / \epsilon$.
+When $x > M$, $\abs{1/x - 0} = \abs{1/x} =
+1/x < 1 / (1 / \epsilon) = \epsilon$, as desired.
+\medskip
+\item{} c.
+
+Let $f : A \to \real$ be such that
+for all $x \in R$, $(x, +\infty) \cap A$ is nonempty.
+We say that $\lim _{x \to +\infty} f(x) = +\infty$ if
+for every $M > 0$, there exists $N > 0$ such that
+whenever $x > N$, it follows that $f(x) > M$.
+
+For example, $\lim _{x \to +\infty} x = +\infty$.
+Given $M > 0$, take $N = M$.
+If $x > N$, then $x > N = M$, as desired.
+\bigskip
+\item{4.3.9.}
+
+We want to show that $K$ contains all of its limit points.
+Let $x$ be a limit point of $K$.
+Then there is a sequence $(x_n) \subset K$ that converges to $x$.
+By the definition of $K$, we have that
+$h(x_n) = 0$ for all natural numbers $n$.
+Since $h$ is continuous on $\real$ and $x$ is a limit point of $K$,
+by the sequential criterion for functional limits,
+we have that $h(x) = \lim h(x_n) = 0$,
+so $x \in K$, as desired.
+\bigskip
+\item{4.3.12.}
+
+We want to show that $g$ is continuous at $c$ for all real numbers $c$.
+Let $c$ be a real number.
+Given $\epsilon > 0$, take $\delta = \epsilon$.
+Notice that $\abs{g(x) - g(c)} = \abs{\inf \{\abs{x - a} : a \in F\} - g(c)} =
+\abs{\inf \{\abs{x - c + c - a} : a \in F\} - g(c)} \le
+\abs{\inf \{\abs{x - c} + \abs{c - a} : a \in F\} - g(c)} =
+\abs{\abs{x - c} + \inf \{\abs{c - a} : a \in F\} - g(c)} =
+\abs{\abs{x - c} + g(c) - g(c)} = \abs{\abs{x - c}} = \abs{x - c} <
+\delta = \epsilon$, so $g$ is continuous at $c$, as desired.
+
+We want to show that if $x \notin F$, then $g(x) \ne 0$.
+Let $x$ be a real number not in $F$.
+Since $F$ is closed, we have that $x$ is not a limit point of $F$.
+Therefore, there exists $\epsilon > 0$ such that
+$\abs{x - a} \ge \epsilon$ for all $a \in F$.
+Therefore, we have that $\epsilon$ is a lower bound for
+$\{\abs{x - a} : a \in F\}$, so $g(x) \ge \epsilon > 0$, as desired.
+\bye
