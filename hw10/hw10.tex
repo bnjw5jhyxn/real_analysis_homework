@@ -1,0 +1,127 @@
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill homework 10}
+\item{4.4.3.}
+
+We first want to show that $f(x) = 1/x^2$
+is uniformly continuous on the interval $A = [1, +\infty)$.
+Given $\epsilon > 0$, take $\delta = {1 \over 2} \epsilon$.
+Given $x, y \in A$, if $\abs{x - y} < \delta$,
+we have that $\abs{f(x) - f(y)} = \abs{1/x^2 - 1/y^2} =
+\abs{(y^2 - x^2) / (x^2 y^2)} = \abs{y - x} (y + x) / x^2 y^2 =
+\abs{x - y} (x / x^2 y^2 + y / x^2 y^2) = \abs{x - y} (1 / x y^2 + 1 / x^2 y)$.
+Since $x$ and $y$ are both at least one,
+we have that $x^2 y \ge 1$ and $x y^2 \ge 1$, so
+$1 / x^2 y \le 1$ and $1 / x y^2 \le 1$.
+Therefore, we have that $\abs{x - y} (1 / x y^2 + 1 / x^2 y) \le
+\abs{x - y} (1 + 1) = 2\abs{x - y} < 2\delta = 2({1 \over 2} \epsilon) =
+\epsilon$, so $\abs{f(x) - f(y)} < \epsilon$, as desired.
+
+We want to show that $f(x)$ is not uniformly continuous
+on the interval $A = (0,1]$.
+Take $x_n = 1/n$ and $y_n = 1 / (n + 1)$.
+Clearly, $(x_n)$ and $(y_n)$ are both contained in $A$.
+Notice that $\abs{x_n - y_n} = \abs{1/n - 1/(n + 1)} =
+\abs{(n + 1 - n) / (n(n + 1))} = \abs{1 / (n(n + 1))}$,
+which clearly converges to $0$.
+Since $\abs{f(x_n) - f(y_n)} = \abs{1/x_n^2 - 1/y_n^2} =
+\abs{n^2 - (n + 1)^2} = \abs{n^2 - (n^2 + 2n + 1)} =
+\abs{-2n - 1} = 2n + 1 \ge 3$,
+$f$ is not uniformly continuous on $A$.
+\bigskip
+\item{4.4.10.}
+
+Let $f(x)$ and $g(x)$ be uniformly continuous functions on a common domain $A$.
+Then $f(x) + g(x)$ is also uniformly continuous.
+Given $\epsilon > 0$, take $\delta _1$ such that
+$\abs{f(x) - f(x)} < {1 \over 2} \epsilon$
+whenever $x, y \in A$ and $\abs{x - y} < \delta _1$.
+Similarly, take $\delta _2$ such that
+$\abs{g(x) - g(x)} < {1 \over 2} \epsilon$
+whenever $x, y \in A$ and $\abs{x - y} < \delta _2$.
+Take $\delta = \min \{\delta _1, \delta _2\}$.
+Then for any $x, y \in A$, if $\abs{x - y} < \delta$, we have that
+$\abs{f(x) + g(x) - (f(y) - g(y))} \le \abs{f(x) - f(y)} + \abs{g(x) - g(y)} <
+{1 \over 2} \epsilon + {1 \over 2} \epsilon = \epsilon$, as desired.
+
+If $f(x)$ and $g(x)$ be uniformly continuous functions on a common domain $A$,
+then $f(x) g(x)$ is not necessarily uniformly continuous.
+For example, take $f(x) = x$ and $g(x) = x$ for all real numbers $x$.
+Clearly, $f(x)$ and $g(x)$ are both uniformly continuous.
+We will show that $f(x) g(x) = x^2$ is not uniformly continuous.
+Take $x_n = n$ and $y_n = n + 1/n$.
+Notice that $\abs{x_n - y_n} = \abs{n - (n + 1/n)} = \abs{-1/n} = 1/n$,
+which clearly converges to $0$.
+However, $\abs{x_n^2 - y_n^2} = \abs{n^2 - (n + 1/n)^2} =
+\abs{n^2 - (n^2 + 2 + 1/n^2)} = \abs{-2 - 1/n^2} = 2 + 1/n^2 \ge 2$,
+so $x^2$ is not uniformly continuous on the real numbers.
+
+If $f(x)$ and $g(x)$ be uniformly continuous functions on a common domain $A$,
+then $f(x) / g(x)$ is not necessarily uniformly continuous.
+For example, take $f(x) = 1$ and $g(x) = x$ for all positive real numbers $x$.
+Clearly, $f(x)$ and $g(x)$ are both uniformly continuous
+over the positive real numbers.
+We will show that $f(x) / g(x) = 1/x$ is not uniformly continuous.
+Take $x_n = 1/n$ and $y_n = 1/(n + 1)$.
+By the same argument as in exercise (3), $(\abs{x_n - y_n}) \to 0$.
+Notice that $\abs{1/x_n - 1/y_n} = \abs{n - (n + 1)} = \abs{-1} = 1$,
+so $1/x$ is not uniformly continuous on the positive real numbers.
+
+Let $f(x)$ and $g(x)$ be uniformly continuous functions on a common domain $A$.
+Then $f(g(x))$ is also uniformly continuous.
+Given $\epsilon > 0$, take $\epsilon _1$ such that
+if $\abs{x - y} < \epsilon _1$, then $\abs{f(x) - f(y)} < \epsilon$.
+Take $\delta$ such that if $\abs{x - y} < \delta$,
+then $\abs{g(x) - g(y)} < \epsilon _1$
+(and hence $\abs{f(g(x)) - f(g(y))} < \epsilon$).
+\bigskip
+\item{4.4.13.} a.
+
+Let $f$ be a uniformly continuous function on a domain $A$ and
+let $(x_n)$ be a Cauchy sequence.
+We want to show that $(f(x_n))$ is Cauchy, that is,
+we want to show that given $\epsilon > 0$,
+there is a natural number $N$ such that for all natural numbers $m, n \ge N$,
+it follows that $\abs{f(x_m) - f(x_n)} < \epsilon$.
+Given $\epsilon > 0$, since $f$ is uniformly continuous,
+we can take $\delta > 0$ such that if $x, y \in A$ and $\abs{x - y} < \delta$,
+then $\abs{f(x) - f(y)} < \epsilon$.
+Since $(x_n)$ is Cauchy, we can take $N$ such that
+$\abs{x_m - x_n} < \delta$ for all $m, n \ge N$.
+Since $\abs{x_m - x_n} < \delta$, we have that
+$\abs{f(x_m) - f(x_n)} < \epsilon$ for all $m, n \ge N$, as desired.
+\medskip
+\item{} b.
+
+$(\Rightarrow)$ For the forward direction, let $g$
+be a uniformly continuous function on the interval $(a, b)$.
+Since $a$ is a limit point of $(a, b)$, we can take a sequence
+$(a_n) \subset (a, b)$ that converges to $a$.
+By part (a), since $(a_n)$ is Cauchy,
+$(g(a_n))$ is also Cauchy and therefore converges.
+We then define $g(a) = \lim g(a_n)$.
+Similarly, we can take a sequence $(b_n) \to b$
+and define $g(b) = \lim g(b_n)$.
+Since $g$ is continuous on $(a, b)$,
+it suffices to show that $g$ is continuous at $a$ and $b$.
+We will first show that $g$ is continuous at $a$,
+that is, we will show that for any sequence $(x_n) \subset (a, b)$
+that converges to $a$, it follows that $(g(x_n)) \to g(a)$.
+Let $(x_n) \subset (a, b)$ be such a sequence.
+Consider the sequence $(c_n) = (x_1, a_1, x_2, b_2, \ldots)$.
+Notice that this sequence also converges to $a$.
+Since $g$ is uniformly continuous, by part (a),
+it follows that $(g(c_n))$ also converges.
+Notice that $(g(a_n))$ is a subsequence of $(g(c_n))$,
+so $\lim g(c_n) = \lim g(a_n) = g(a)$.
+Since $(g(x_n))$ is also a subsequence of $(g(c_n))$,
+we have that $\lim g(x_n) = \lim g(c_n) = g(a)$, as desired.
+Analogously, $g$ is continuous at $b$,
+so the extended function $g$ is continuous on $[a, b]$.
+
+$(\Leftarrow)$ For the backward direction, let $g$ be a continuous function
+that can be extended so that it is continuous on the interval $[a, b]$.
+Since $[a, b]$ is compact, by uniform continuity on compact sets,
+$g$ is uniformly continuous on $[a, b]$.
+Clearly, $g$ is also uniformly continuous on $(a, b)$
+since we can take the same $\delta$ as for $[a, b]$ given some $\epsilon > 0$.
+\bye
