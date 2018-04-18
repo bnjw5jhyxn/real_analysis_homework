@@ -1,0 +1,146 @@
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill homework 11}
+\item{4.5.3.}
+
+If $f(a) = f(b)$, then for all $c \in [a,b]$,
+since $f(a) \le f(c) \le f(b)$,
+we have that $f(c) = f(a)$,
+so $f$ is constant on $[a,b]$.
+Otherwise, assume that $f(a) < f(b)$.
+
+We will first show that $f$ is continuous at $a$.
+Given $\epsilon > 0$, if $f(b) - f(a) < \epsilon$,
+then take $\delta = b - a$.
+Since $f$ is increasing, for any $y$ such that $0 \le y - a < \delta$,
+we have that $f(a) \le f(y) \le f(b) < a + \epsilon$,
+so $0 \le f(y) - f(a) < \epsilon$.
+If $f(b) - f(a) \ge \epsilon$,
+we have that $f(a) < f(a) + \epsilon/2 < f(a) + \epsilon \le f(b)$.
+By the intermediate value property,
+there is some $c \in [a,b]$ such that $f(c) = f(a) + \epsilon/2$.
+Take $\delta = c - a$.
+Since $f$ is increasing, for any $y$ such that $0 \le y - a < \delta$,
+we have that $f(a) \le f(y) \le f(c) \le f(a) + \epsilon/2$,
+so $0 \le f(y) - f(a) \le \epsilon/2 < \epsilon$.
+By an analogous argument, $f$ is continuous at $b$.
+
+We will now show that $f$ is continuous for $x \in (a,b)$.
+Given $\epsilon > 0$,
+by the same argument as in the previous paragraph,
+there exists $\delta _1$ such that
+if $0 \le y - x < \delta$, then $0 \le f(y) - f(x) < \epsilon$.
+Similarly, there exists $\delta _2$ such that
+if $0 \le x - y < \delta$, then $0 \le f(x) - f(y) < \epsilon$.
+Take $\delta = \min\{\delta _1, \delta _2\}$.
+Clearly, if $\abs{x - y} < \delta$,
+then $\abs{f(y) - f(x)} < \epsilon$, as desired.
+\bigskip
+\item{4.5.7.}
+
+By the algebraic continuity theorem, $f(x) - x$ is continuous on $[0,1]$.
+Since $0 \le f(0)$, we have that $0 \le f(0) - 0$.
+Since $f(1) \le 1$, we have that $f(1) - 1 \le 0$.
+Since $f(0) - 0 \ge 0$ and $f(1) - 1 \le 0$,
+by the intermediate value theorem,
+there exists $c \in [0,1]$ such that $f(c) - c = 0$.
+Therefore, $f(c) = c$, as desired.
+\bigskip
+\item{4.5.8.}
+
+Let $f$ be a one-to-one, continuous function on the interval $[a,b]$.
+
+\proclaim Lemma. $f$ is either strictly increasing or strictly decreasing.
+
+Notice that if $s \ne t$, then $f(s) \ne f(t)$ since $f$ is one-to-one.
+We have two cases: $f(a) < f(b)$ or $f(a) > f(b)$.
+
+Assume that $f(a) < f(b)$.
+We will show that for any $x$ and $y$ such that $a < x < y < b$,
+it follows that $f(x) < f(y)$.
+
+Assume for contradiction that there exist $x, y \in [a,b]$
+such that $x < y$, but $f(x) > f(y)$.
+If $f(x) > f(a)$, take $L = {1 \over 2} (f(x) + \max \{f(a), f(y)\})$.
+Notice that $f(a) < L < f(x)$ and $f(x) > L > f(y)$.
+By the intermediate value theorem, there exist $c_1$ between $a$ and $x$
+and $c_2$ between $x$ and $y$ such that $f(c_1) = f(c_2) = L$.
+Similarly, if $f(x) < f(a)$, then $f(y) < f(x) < f(a) < f(b)$.
+Take $L = {1 \over 2} (f(y) + \min \{f(x), f(b)\})$.
+By the intermediate value theorem, there exist $c_1$ between $x$ and $y$
+and $c_2$ between $y$ and $b$ such that $f(c_1) = f(c_2) = L$.
+Therefore, we have that $f(x) < f(y)$.
+
+Additionally, we will show that $f(a) < f(x) < f(b)$ for any $x$ between $a$ and $b$.
+Consider the sequence $(a_n) = (a + (x - a)/n)$.
+Notice that $(a_n)$ converges to $a$.
+Since $a_n \le x$ for all natural numbers $n$,
+we have by the previous paragraph that $f(a_n) \le f(x)$,
+so by the order limit theorem, we have that $f(a) \le (x)$.
+Since $a \ne x$, we have that $f(a) < f(x)$.
+Similarly, consider thee sequence $(b_n) = (b - (b - x)/n)$.
+By the same argument, $(b_n)$ converges to $b$ and $f(b) > f(x)$.
+
+We have that $f$ is strictly increasing, as desired.
+
+If $f(a) > f(b)$, by an analogous argument, $f$ is strictly decreasing.
+\medskip
+By preservation of compact sets, since $[a,b]$ is compact,
+we have that the range of $f$ is also compact.
+Additionally, by preservation of connected sets, since $[a,b]$ is connected,
+we have that the range of $f$ is connected.
+Since every connected, compact set is a closed, bounded interval,
+there exist real numbers $c$ and $d$ such that
+the domain of $f^{-1}$ is $[c,d]$.
+
+By the lemma, we have two cases: $f$ is strictly increasing or
+$f$ is strictly decreasing.
+
+We will show that if $f$ is strictly increasing,
+then $f^{-1}$ is strictly increasing.
+Assume for contradiction that $f$ is strictly increasing, but $f^{-1}$ is not.
+Then there are real numbers $x$ and $y$ in $[c,d]$
+such that $x < y$ and $f^{-1}(x) \ge f^{-1}(y)$.
+Applying $f$ to both sides, we have that $f(x) < f(y)$ and $x \ge y$,
+contradicting our assumption that $f$ is strictly increasing.
+Similarly, if $f$ is strictly decreasing, then $f^{-1}$ is strictly decreasing.
+
+We will now show that $f^{-1}$ satisfies the intermediate value property.
+Let $x$ and $y$ be points in $[c,d]$.
+Let $L$ be a real number between $f^{-1}(x)$ and $f^{-1}(y)$.
+Notice that the real numbers $s = f^{-1}(x)$ and $t = f^{-1}(y)$ are in $[a,b]$.
+Since $L$ is between $s$ and $t$ and the domain of $f$ is an interval,
+$f$ is defined at $L$.
+Since $f$ is monotonic, we have that $f(L)$ is between $f(s)$ and $f(t)$,
+so $f(L)$ is between $x$ and $y$ and $f^{-1}(f(L))$ is between $f(x)$ and $f(y)$.
+
+By exercise (4.5.3.), since $f^{-1}$ is monotonic and
+satisfies the intermediate value property, it is continuous, as desired.
+\bigskip
+\item{4.6.2.}
+
+We will show that $D_f = A$.
+
+\proclaim Lemma. For all real numbers $c$, $\lim _{x \to c} f(x) = 0$.
+
+Let $c$ be a real number.
+Given $\epsilon > 0$, take $\delta = \min \{\abs{a_n - c} : n \le 1/\epsilon, a_n \ne c\}$.
+If $0 < \abs{x - c} < \delta$, we have two cases.
+If $x = a_n$ for some $a_n \in A$,
+we have from the definition of $\delta$ that $n > 1/\epsilon$,
+that is, we have that $1/n < \epsilon$,
+so $\abs{f(x) - 0} = \abs{f(a_n)} = \abs{1/n} = 1/n < \epsilon$.
+Otherwise, $f(x) = 0$, so $\abs{f(x) - 0} = \abs{0 - 0} = 0 < \epsilon$, as desired.
+\medskip
+We want to show that $f$ is continuous at $c$ for all $c \notin A$.
+If $c \notin A$, then $f(c) = 0$.
+By the lemma, $\lim _{x \to c} f(x) = 0 = f(c)$,
+so $f$ is continuous at $c$.
+
+We also want to show that $f$ is discontinuous at $c$
+for all $c \in A$.
+If $c \in A$, then $c = a_n$ for some natural number $n$ and $f(c) = 1/n$.
+By the lemma, $\lim _{x \to c} f(x) = 0 \ne 1/n = f(c)$,
+so $f$ is discontinuous at $c$.
+
+Therefore, $D_f = A$, as desired.
+\bye

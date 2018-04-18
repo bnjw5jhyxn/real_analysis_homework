@@ -1,0 +1,25 @@
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill workshop 8}
+\item{1.}
+
+Given $\epsilon > 0$, we want to find $\delta > 0$ such that
+for all $x, y \ge 0$, if $\abs{x - y} < \delta$, it follows that
+$\abs{g(x) - g(y)} < \epsilon$.
+
+Since $\lim _{x \to +\infty} g(x)$ exists and is finite,
+we can take $L = \lim _{x \to +\infty} g(x)$.
+By definition, there exists a real number $M$ such that
+whenever $x \ge M$, it follows that $\abs{g(x) - L} < \epsilon/2$.
+Therefore, if $x, y \ge M$, then $\abs{x - y} = \abs{x - M + M - y} \le
+\abs{x - M} + \abs{y - M} < \epsilon/2 + \epsilon/2 = \epsilon$.
+Since $g$ is continuous on $[0,M+1]$, by uniform continuity on compact sets,
+it follows that $g$ is uniformly continuous on $[0,M+1]$.
+Therefore, there exists $\delta _1$ such that for all $x, y \in [0,M+1]$,
+if $\abs{x - y} < \delta _1$, it follows that $\abs{x - y} < \epsilon$.
+Take $\delta = \min \{1, \delta _1\}$.
+Notice that for all $x, y \ge 0$, if $\abs{x - y} < \delta$,
+we cannot have one in $[0,M)$ and the other in $(M+1,+\infty)$
+since $\delta \le 1$.
+Therefore, either $x, y \in [0,M+1]$ or $x, y \ge M$.
+In either case, by the reasoning above, $\abs{x - y} < \epsilon$, as desired.
+\bye
