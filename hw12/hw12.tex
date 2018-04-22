@@ -1,0 +1,130 @@
+\def\abs#1{\vert#1\vert}
+\centerline{Steve Hsu\hfill homework 12}
+\item{5.2.2.} a. $f(x) = g(x) = \abs x$ for all real numbers $x$
+
+We know that $\abs x$ is not differentiable at $0$,
+but $\abs x^2 = x^2$ is differentiable at $0$.
+\medskip
+item{} b. $f(x) = \abs x$ and $g(x) = 0$ for all real numbers $x$
+
+Notice that $(fg)(x) = 0$ for all real numbers $x$.
+The desired property follows.
+\medskip
+\item{} c. not possible
+
+Suppose for contradiction that there are functions $f$ and $g$
+such that $f$ is not differentiable at $0$,
+but $g$ and $f+g$ are.
+Then $g'(0)$ and $(f+g)'(0)$ both exist.
+By the algebraic differentiability theorem, we have that
+$(f+g)'(0) - g'(0)$ exists and is equal to $f'(0)$.
+\medskip
+\item{} d. $$f(x) = \cases{
+x^2 &, $x$ is rational\cr
+0 &, $x$ is irrational\cr
+}$$
+
+Notice that $f$ is discontinuous at all points except $0$
+and is therefore not differentiable at any point other than $0$.
+Additionally, $f(x) \le x^2$ for all real numbers $x$.
+We want to show that $\lim _{x \to 0} (f(x) - f(0)) / (x - 0)$ exists.
+We claim that $\lim _{x \to 0} (f(x) - f(0)) / (x - 0) = 0$.
+Given $\epsilon > 0$, take $\delta = \epsilon$.
+If $\abs{x - 0} < \delta$, then we have that
+$\abs{(f(x) - f(0)) / (x - 0) - 0} = \abs{(f(x) - 0) / x} \le \abs{x^2 / x} =
+\abs x < \delta = \epsilon$, as desired.
+\bigskip
+\item{5.2.5.} a. If $a > 0$, then $f_a$ is continuous at $0$.
+
+If $a > 0$, then $\lim _{x \to 0^+} f(x) = 0$.
+If $a = 0$, then $\lim _{x \to 0^+} f(x) = 1$.
+If $a < 0$, then $\lim _{x \to 0^+} f(x) = +\infty$.
+Since $f(0) = \lim _{x \to 0^-} f(x) = 0$,
+$f$ is continuous at $0$ if and only if $a > 0$.
+\medskip
+\item{} b. If $a > 1$, then $f_a$ is differentiable at $0$.
+
+If $a > 1$, then $\lim _{x \to 0^+} (f(x) - f(0)) / (x - 0) =
+\lim _{x \to 0^+} (x^a - 0^a) / x = \lim _{x \to 0^+} x^{a - 1}$.
+\hfil\break
+Since $\lim _{x \to 0^-} (f(x) - f(0)) / (x - 0) =
+\lim _{x \to 0} (0 - 0) / x = 0$,
+we have that $\lim _{x \to 0}$ exists if and only if $a - 1 > 0$,
+that is, if $a > 1$.
+
+Since $f_a'(x) = ax^{a - 1}$ when $x > 0$,
+and $a0^{a - 1} = 0$ when $a > 1$,
+we have that $f_a'$ is continuous at $0$ when it exists.
+\medskip
+\item{} c. If $a > 2$, then $f_a$ is twice differentiable at $0$.
+
+By part (b), we have that $f_a' = af_{a-1}$,
+which is differentiable if and only if $a - 1 > 1$, that is,
+if $a > 2$.
+\bigskip
+\item{5.2.9.} a. true
+
+Assume that $f'$ is not constant.
+Then there exist $x$ and $y$ such that $f'(x) \ne f'(y)$.
+Since $f'$ has the intermediate value property,
+and by the density of the irrational numbers in the real numbers,
+there is an irrational number between $f'(x)$ and $f'(y)$
+and $f'$ attains this value.
+\medskip
+\item{} b. false: take $f(x) = {1 \over 2} x + x^2 \sin (1/x)$
+
+Notice that $f'(0) = 1/2$ and that
+$f'(x) = 1/2 + 2x \sin (1/x) - \sin (1/x)$,
+which oscillates between $-1/2$ and $3/2$ when $x$ is close to $0$.
+\medskip
+\item{} c. true
+
+Assume for contradiction that there is a function $f$
+differentiable on an interval containing $0$ and a real number $L$
+such that $\lim _{x \to 0} f'(x) = L$, but $f'(0) \ne L$.
+Then there exists $\delta > 0$ such that if $0 < \abs{x - 0} < \delta$,
+then $\abs{f'(x) - L} < {1 \over 2} \abs{L - f'(0)}$.
+Notice that ${1 \over 4} L + {3 \over 4} f'(0)$ is between $f'(0)$ and $L$,
+but outside the $\abs{L - f'(0)}$-neighborhood of $L$.
+This is a contradiction because
+$f'$ does not have the intermediate value property.
+\bigskip
+\item{5.3.3.} a.
+
+Since $h$ is differentiable on $[0,3]$,
+it follows that $h$ is continuous on $[0,3]$.
+By the algebraic continuity theorem,
+$g(x) = h(x) - x$ is also continuous on $[0,3]$.
+Notice that $g(0) = h(0) - 0 = 1 - 0 = 1$
+and that $g(3) = h(3) - 3 = 2 - 3 = -1$.
+By the intermediate value theorem,
+there is a real number $c \in [0,3]$ such that $g(c) = h(c) - c = 0$.
+It follows that $h(c) = c$, as desired.
+\medskip
+\item{} b.
+
+By the mean value theorem,
+there is a point $c \in [0,3]$ such that
+$h'(c) = (h(3) - h(0)) / (3 - 0) = (2 - 1) / 3 = 1/3$,
+as desired.
+\medskip
+\item{} c.
+
+By the mean value theorem, there is a point $c_1 \in [0,1]$ such that
+$h'(c_1) = (h(1) - h(0)) / (1 - 0) = (2 - 1) / 1 = 1$.
+There is also a point $c_2 \in [1,3]$ such that
+$h'(c_2) = (h(3) - h(1)) / (3 - 1) = (2 - 2) / 2 = 0$.
+Since $h'$ satisfies the intermediate value property,
+it follows that there is a point $c \in [c_1, c_2]$ such that
+$h'(c) = 1/4$, as desired.
+\bigskip
+\item{5.3.8.}
+
+We want to show the existence of
+$f'(0) = \lim _{x \to 0} (f(x) - f(0)) / (x - 0)$.
+Since $f$ is continuous, we have that $\lim _{x \to 0} f(x) = f(0)$, that is,
+$\lim _{x \to 0} f(x) - f(0) = 0$.
+Additionally, $\lim _{x \to 0} x - 0 = 0$.
+Since $f$ is differentiable close to $0$, we can apply L'Hospital's Rule,
+obtaining $f'(0) = \lim _{x \to 0} f'(x) / 1 = L$, as desired.
+\bye
