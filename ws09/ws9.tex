@@ -1,0 +1,33 @@
+\centerline{Steve Hsu\hfill workshop 9}
+\item{b.}
+
+In order to show that $f$ is differentiable at $0$, we need to show
+the existence of $f'(0) = \lim _{x \to 0} (f(x) - f(0)) / (x - 0)$.
+Since $f$ is continuous at $0$ and differentiable close to $0$,
+we can apply L'Hospital's rule to obtain
+$f'(0) = \lim _{x \to 0} (f'(x) - 0) / (1) = \lim _{x \to 0} f'(x)$.
+Since $f'(x) = 0$ for $x < 0$ and $f'(x) = 2 x^{-3} e^{-x^{-2}}$ for $x > 0$,
+we have that
+$\lim _{x \to 0^+} f'(x) = \lim _{x \to 0^+} x^{-3} e^{-x^{-2}}
+= \lim _{x \to 0^+} 2 / (x^3 e^{x^{-2}})$,
+which is clearly $0$.
+Therefore, $\lim _{x \to 0} f'(x) = 0$, so $f'(0) = 0$
+and $f'$ exists and is continuous at $0$.
+Since $f'$ is continuous everywhere else,
+$f$ is differentiable and $f'$ is continuous, as desired.
+\bigskip
+\item{} c.
+
+We want to show the existence of
+$f''(0) = \lim _{x \to 0} (f'(x) - f'(0)) / (x - 0)$.
+Since $f'$ is continuous at $0$ and differentiable close to $0$,
+we can apply L'Hospital's rule to obtain
+$f''(0) = \lim _{x \to 0} (f''(x) - 0) / (1) = \lim _{x \to 0} f''(x)$.
+Since $f''(x) = -6 x^{-4} e^{-x^{-2}} + 4 x^{-6} e^{-x^{-2}}$ for $x > 0$,
+we have that $\lim _{x \to 0^+} f''(x) = 0$
+for the same reasons as in part (a).
+Therefore, $f''(0) = \lim _{x \to 0} f''(x) = 0$,
+so $f''$ is continuous at $0$.
+By the same argument as in part (a),
+we have that $f'$ is differentiable and $f''$ is continuous.
+\bye
